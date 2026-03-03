@@ -10,12 +10,14 @@
   <meta name="author" content="Stefanie & Jörg Abshagen" />
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
-  <!-- Open Graph für Social Media -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen" />
   <meta property="og:description" content="Gemütliche Ferienwohnung für bis zu 5 Personen, Dorfstr. 8, Putgarten. Direkt am Froschteich, 1 km zum Strand, Haustiere willkommen." />
-  <meta property="og:image" content="https://abshagen.github.io/Ferienwohnung/og-image.jpg" /> <!-- Ersetze ggf. durch echtes Bild -->
+  <meta property="og:image" content="https://files.catbox.moe/0s4q5k.png" />
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
+  <!-- Favicon (dein Frosch-Logo als Tab-Icon) -->
+  <link rel="icon" href="https://files.catbox.moe/0s4q5k.png" type="image/png">
 
   <style>
     :root {
@@ -32,10 +34,17 @@
       position:relative; height:90vh; min-height:650px;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
                   url('https://static.ferienhausmiete.de/pictures/175333/bilder_original/175333_79761968515171.jpg') center/cover no-repeat;
-      color:white; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 1.5rem;
+      color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 1.5rem;
     }
-    .hero-content { max-width:900px; }
-    h1 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:1rem; text-shadow:0 4px 12px rgba(0,0,0,0.7); }
+    .logo-container {
+      margin-bottom:1.5rem;
+    }
+    .logo-container img {
+      width: 140px; /* Größe anpassen: kleiner = 100px, größer = 180px */
+      height: auto;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.6));
+    }
+    h1 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:0.5rem; text-shadow:0 4px 12px rgba(0,0,0,0.7); }
     .lead { font-size:1.4rem; margin-bottom:2rem; }
     .btn {
       display:inline-block; background:var(--accent); color:white; font-size:1.3rem; font-weight:bold;
@@ -70,6 +79,9 @@
 
 <header>
   <div class="hero-content">
+    <div class="logo-container">
+      <img src="https://files.catbox.moe/0s4q5k.png" alt="Froschteich Logo – Frosch Symbol">
+    </div>
     <h1>Ferienwohnung am Froschteich</h1>
     <p class="lead">Dorfstr. 8, 18556 Putgarten – nördlichster Zipfel von Rügen | Bis 5 Personen | Haustiere willkommen | 1 km zum Strand</p>
     <a href="#verfuegbarkeit" class="btn">Verfügbarkeit prüfen & anfragen</a>
