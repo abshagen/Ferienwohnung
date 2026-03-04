@@ -41,10 +41,10 @@
       min-height:100vh; 
       position:relative;
       overflow-x: hidden;
-      margin-top: 50px; /* Platz für den Banner oben schaffen */
+      margin-top: 50px; /* Platz für den Banner oben */
     }
 
-    /* Life-Ticker Banner – immer oben sichtbar */
+    /* Life-Ticker Banner */
     .ticker-banner {
       position: fixed;
       top: 0;
@@ -60,27 +60,18 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       font-size: 1.1rem;
     }
-
     .ticker-content {
       display: inline-block;
       white-space: nowrap;
       animation: ticker 40s linear infinite;
     }
-
     @keyframes ticker {
       0%   { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-
-    /* Auf kleinen Bildschirmen anpassen */
     @media (max-width: 600px) {
-      .ticker-banner {
-        font-size: 0.95rem;
-        padding: 10px 0;
-      }
-      .ticker-content {
-        animation-duration: 30s;
-      }
+      .ticker-banner { font-size: 0.95rem; padding: 10px 0; }
+      .ticker-content { animation-duration: 30s; }
     }
 
     /* Fixed Wasserzeichen */
@@ -179,7 +170,7 @@
 </head>
 <body>
 
-<!-- Life-Ticker Banner – immer oben sichtbar -->
+<!-- Life-Ticker Banner -->
 <div class="ticker-banner">
   <div class="ticker-content">
     Leider bleibt unsere Ferienwohnung in der ersten Jahreshälfte 2026 aufgrund von Sanierungsarbeiten geschlossen. Anfragen darüber hinaus nehmen wir jedoch gerne entgegen. Eure Familie Abshagen.
@@ -242,6 +233,23 @@
     <object data="https://lh3.googleusercontent.com/pw/AP1GczNrjq1Z2PPXT-INaDyn7e6RzaV_rpfcncySZoV6gwTbIfRIlBejcNh7CXZx9NtWvwMoTa80L2YULbWBNI1kmMy_yq_dwoGAS35qQjJLoiUt956cj1Is=w1920-h1080"></object>
     <object data="https://lh3.googleusercontent.com/pw/AP1GczOd118aZVlg7fiIjAuyrthcTia2LlCx244DIH4wyc5qm2QCuBphdv03ceT6qKFePlrGE-qMNDE7ecl6JxDSoqJlug2svdVRbuh0r0grO_ha1Jsf5Dtx=w1920-h1080"></object>
   </div>
+</section>
+
+<!-- Google Bewertungen Widget -->
+<section id="bewertungen" style="background:#f8f9fa; padding:4rem 1.5rem; text-align:center;">
+  <h2>Was unsere Gäste sagen</h2>
+  <p style="margin-bottom:2rem; font-size:1.2rem;">Echte Bewertungen von Google</p>
+
+  <!-- Trustindex Widget -->
+  <div class="google-reviews-widget">
+    <script defer async src='https://cdn.trustindex.io/loader.js?f6304db66a3d286ca2567c2dc22'></script>
+  </div>
+
+  <p style="margin-top:2rem; font-size:1.1rem;">
+    <a href="https://maps.app.goo.gl/udNsCGiRC5gpczzp8" target="_blank" style="color:var(--primary); font-weight:bold; text-decoration:underline;">
+      Jetzt selbst eine Bewertung schreiben →
+    </a>
+  </p>
 </section>
 
 <section id="verfuegbarkeit" style="background:#f8f9fa; padding:3rem 1.5rem; text-align:center;">
