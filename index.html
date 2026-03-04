@@ -27,33 +27,48 @@
       --gray: #6c757d;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: system-ui, sans-serif; line-height:1.6; color:var(--dark); background:var(--light); }
-    header {
-      position:relative; height:90vh; min-height:650px;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
-                  url('https://static.ferienhausmiete.de/pictures/175333/bilder_original/175333_79761968515171.jpg') center/cover no-repeat;
-      color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 1.5rem;
-      overflow: hidden;
+    body { 
+      font-family: system-ui, sans-serif; 
+      line-height:1.6; 
+      color:var(--dark); 
+      background:var(--light); 
+      min-height:100vh; 
+      position:relative;
     }
+
+    /* Fixed Wasserzeichen – bleibt immer sichtbar */
     .watermark-logo {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 700px;
-      opacity: 0.10;
-      filter: blur(8px);
+      width: 85vw;
+      max-width: 900px;
+      opacity: 0.18;
+      filter: blur(5px);
       pointer-events: none;
-      z-index: -1;
+      z-index: -999;
+      user-select: none;
     }
     .watermark-logo img {
       width: 100%;
       height: auto;
       object-fit: contain;
     }
-    .hero-content {
-      position: relative;
+
+    header {
+      position:relative; 
+      height:90vh; 
+      min-height:650px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+                  url('https://static.ferienhausmiete.de/pictures/175333/bilder_original/175333_79761968515171.jpg') center/cover no-repeat;
+      color:white; 
+      display:flex; 
+      flex-direction:column; 
+      align-items:center; 
+      justify-content:center; 
+      text-align:center; 
+      padding:0 1.5rem;
       z-index: 1;
     }
     h1 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:0.5rem; text-shadow:0 4px 12px rgba(0,0,0,0.7); }
@@ -67,7 +82,7 @@
     .btn-outline { background:transparent; border:2px solid white; color:white; margin-left:1.5rem; }
     .btn-outline:hover { background:white; color:var(--dark); }
 
-    section { padding:4rem 1.5rem; max-width:1200px; margin:0 auto; }
+    section { padding:4rem 1.5rem; max-width:1200px; margin:0 auto; position:relative; z-index:1; }
     h2 { text-align:center; font-size:2.4rem; margin-bottom:2rem; color:var(--primary-dark); }
     h3 { font-size:1.8rem; margin:1.5rem 0 1rem; color:var(--primary); }
     .grid-3 { display:grid; gap:1.8rem; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); }
@@ -78,7 +93,7 @@
     .rules-box th, .rules-box td, .price-table th, .price-table td { padding:0.8rem; border:1px solid #ddd; text-align:left; }
     .rules-box th, .price-table th { background:var(--primary); color:white; }
     .price-box { background:white; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.08); padding:2rem; text-align:center; max-width:800px; margin:0 auto; }
-    footer { background:var(--dark); color:white; text-align:center; padding:2.5rem 1rem; font-size:0.95rem; }
+    footer { background:var(--dark); color:white; text-align:center; padding:2.5rem 1rem; font-size:0.95rem; position:relative; z-index:1; }
     footer a { color:#00d4ff; text-decoration:underline; }
 
     .pa-gallery-player-widget { border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.15); }
@@ -88,10 +103,12 @@
 </head>
 <body>
 
+<!-- Fixed Wasserzeichen – bleibt immer sichtbar -->
+<div class="watermark-logo">
+  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogo.jpg" alt="">
+</div>
+
 <header>
-  <div class="watermark-logo">
-    <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogo.jpg" alt="">
-  </div>
   <div class="hero-content">
     <h1>Ferienwohnung am Froschteich</h1>
     <p class="lead">Dorfstr. 8, 18556 Putgarten – nördlichster Zipfel von Rügen | Bis 5 Personen | Haustiere willkommen | 1 km zum Strand</p>
@@ -99,8 +116,6 @@
     <a href="#kontakt" class="btn btn-outline">Direkt kontaktieren</a>
   </div>
 </header>
-
-<!-- Rest der Seite – alles wie bisher -->
 
 <section id="beschreibung">
   <h2>Zu Gast und doch Zuhause!</h2>
