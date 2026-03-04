@@ -321,13 +321,10 @@
       }
     }
 
-    /* Neuer Gastgeber-Abschnitt – Styling */
+    /* Styling für den Gastgeber-Abschnitt */
     #ueber-uns {
       background: #fff;
-      padding: 5rem 1.5rem;
-    }
-    #ueber-uns h2 {
-      margin-bottom: 3rem;
+      padding: 5rem 1.5rem 4rem;
     }
     .gastgeber-container {
       display: flex;
@@ -338,22 +335,25 @@
       margin: 0 auto;
     }
     .gastgeber-bild {
-      flex: 1;
-      min-width: 280px;
+      flex: 0 0 240px;
       text-align: center;
     }
     .gastgeber-bild img {
-      max-width: 100%;
-      border-radius: 16px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
+      border: 6px solid #f0f8ff;
+      transition: transform 0.3s ease;
     }
     .gastgeber-bild img:hover {
-      transform: scale(1.03);
+      transform: scale(1.08);
     }
     .gastgeber-text {
-      flex: 2;
-      min-width: 320px;
+      flex: 1;
+      min-width: 300px;
       font-size: 1.15rem;
       line-height: 1.8;
     }
@@ -361,6 +361,9 @@
       .gastgeber-container {
         flex-direction: column;
         gap: 2rem;
+      }
+      .gastgeber-bild {
+        flex: none;
       }
       .gastgeber-text {
         text-align: center;
@@ -406,12 +409,12 @@
   </div>
 </section>
 
-<!-- NEUER ABSCHNITT: Über uns / Gastgeber -->
+<!-- NEUER GASTGEBER-ABSCHNITT -->
 <section id="ueber-uns">
   <h2>Über uns – Ihre Gastgeber</h2>
   <div class="gastgeber-container">
     <div class="gastgeber-bild">
-      <img src="Steffi und Joerg.png" alt="Stefanie und Jörg Abshagen – Ihre Gastgeber">
+      <img src="Steffi und Joerg2.png" alt="Stefanie und Jörg Abshagen – Ihre Gastgeber">
     </div>
     <div class="gastgeber-text">
       <p>Willkommen in der Ferienwohnung am Froschteich, Ihre Idylle in Putgarten auf Rügen. Wir, Stefanie und Jörg Abshagen, würden Sie gerne in unserer Ferienwohnung willkommen heißen. Unsere Ferienwohnung am Froschteich ist nicht nur ein perfekter Ort zum Entspannen und Auftanken, sondern auch der ideale Ausgangspunkt, um die Insel Rügen und all ihre Wunder zu entdecken. Wir freuen uns darauf, Sie bei uns willkommen zu heißen und unvergessliche Urlaubserinnerungen zu schaffen.</p>
@@ -419,11 +422,14 @@
   </div>
 </section>
 
+<!-- Hier folgt der Rest deiner Seite (Galerie, Verfügbarkeit, Bewertungen, Preise, Regeln, Kontakt, Footer) – alles unverändert aus deiner Favoriten-Version -->
+
 <section id="galerie">
   <h2>Fotogalerie</h2>
   <p style="text-align:center; margin-bottom:2.5rem; color:var(--gray);">
     Unsere Ferienwohnung in Bildern – klicken oder tippen Sie zum Vergrößern
   </p>
+
   <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
   <div class="pa-gallery-player-widget" style="width:100%; height:600px; display:none;"
     data-link="https://photos.google.com/share/AF1QipNi5b1lcDFwj2TFJw9y2fJ3kndyNq10nKI9jA070vOLPVCqZPPxSXk4Juke1aIomA?key=UG84UkVTZGgwaXZzYlRiR3RfOW1wQ1hRaTUwM01R"
@@ -447,13 +453,14 @@
   </div>
 </section>
 
-<!-- Rest der Seite (verfuegbarkeit, bewertungen, preise, regeln, kontakt, footer) bleibt genau wie in deiner Favoriten-Version -->
+<!-- Die restlichen Sections (verfuegbarkeit, bewertungen, preise, regeln, kontakt, footer) bleiben genau wie in deiner Favoriten-Version -->
 
 <section id="verfuegbarkeit" style="background:#f8f9fa; padding:4rem 1.5rem; text-align:center;">
   <h2>Verfügbarkeit prüfen</h2>
   <p style="font-size:1.2rem; margin-bottom:2rem;">
     Sehen Sie live, wann unsere Ferienwohnung in Dorfstr. 8, 18556 Putgarten frei ist – oder fragen Sie direkt unverbindlich an!
   </p>
+
   <div class="calendar-container">
     <iframe id="blk58900" width="100%" height="600" frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://api.belegungskalender-kostenlos.de/kalender.php?kid=58900" title="Belegungskalender 58900">
@@ -462,9 +469,11 @@
     <br />
     <span style="font-size:9px;"><a href="https://www.belegungskalender-kostenlos.de" rel="nofollow noopener" target="_blank" style="font-size:9px;">kosteloser Buchungskalender</a></span>
   </div>
+
   <p style="font-size:1.1rem; margin:2rem 0 1.5rem;">
     Keine freien Termine? Oder Fragen? Schreiben Sie uns einfach!
   </p>
+
   <a href="#kontakt" class="btn" style="font-size:1.3rem; padding:1rem 2.5rem;">
     Jetzt unverbindlich anfragen
   </a>
@@ -475,9 +484,11 @@
   <p style="margin-bottom:2.5rem; font-size:1.2rem;">
     Echte Bewertungen von Google
   </p>
+
   <div class="google-reviews-widget">
     <script defer async src='https://cdn.trustindex.io/loader.js?f6304db66a3d286ca2567c2dc22'></script>
   </div>
+
   <p style="margin-top:2.5rem; font-size:1.1rem;">
     <a href="https://maps.app.goo.gl/udNsCGiRC5gpczzp8" target="_blank" style="color:var(--primary); font-weight:bold; text-decoration:underline;">
       Jetzt selbst eine Bewertung schreiben →
@@ -497,11 +508,13 @@
       <tr><td>Haustiere (pro Nacht)</td><td>5 €</td></tr>
       <tr><td>Kurtaxe (pro Person/Tag – separat zu zahlen)</td><td>siehe Hausregeln</td></tr>
     </table>
+
     <p style="margin-top:1.8rem; font-size:1rem; font-weight:bold; color:var(--primary-dark);">
       Keine Umsatzsteuer gemäß § 19 UStG (Kleinunternehmerregelung)
     </p>
+
     <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--gray);">
-      Alle Preise sind Endpreise (Bruttopreise), die der Gast zahlt. Keine versteckten Kosten.
+      Alle Preise sind Endpreise (Bruttopreise), die der Gast zahlt. Keine versteckten Kosten.  
       Stand: März 2026 – Preise können saisonal variieren.
     </p>
   </div>
@@ -515,12 +528,14 @@
       <tr><th>Check-in</th><td>ab 15:00 Uhr</td></tr>
       <tr><th>Check-out</th><td>bis 11:00 Uhr</td></tr>
     </table>
+
     <h3>Zahlungsbedingungen</h3>
     <ul>
       <li>Anzahlung: 20 % bei Buchung</li>
       <li>Restzahlung: 4 Wochen vor Anreise</li>
       <li>Zahlung: Überweisung oder PayPal</li>
     </ul>
+
     <h3>Kurtaxe</h3>
     <p>Kurtaxe ist von der Gemeinde festgeschrieben und ist von jedem Gast separat pro Tag zu entrichten:</p>
     <ul>
@@ -559,7 +574,7 @@
   <!-- SAUBERER WHATSAPP-BUTTON -->
   <div style="text-align:center; margin:2.5rem 0;">
     <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..."
-       target="_blank"
+       target="_blank" 
        rel="noopener noreferrer"
        class="whatsapp-btn">
       <span>💬</span> WhatsApp schreiben
@@ -603,7 +618,7 @@
   </div>
 
   <div class="copyright">
-    © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich • Objektnummer: 4676579
+    © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich
   </div>
 </footer>
 
