@@ -14,7 +14,13 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
+
+  <!-- Favicon optimiert (größer, transparent) -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
 
   <style>
     :root {
@@ -60,9 +66,9 @@
     .hopping-frog {
       position: fixed;
       bottom: 20%;
-      left: -80px;
-      width: 80px;
-      height: 80px;
+      left: -100px;
+      width: 100px;
+      height: 100px;
       pointer-events: none;
       z-index: 9999;
       animation: hopAcross 30s linear infinite;
@@ -73,11 +79,11 @@
       object-fit: contain;
       animation: bounce 1.6s infinite ease-in-out;
       opacity: 0.95;
-      filter: brightness(1.2) contrast(1.3) drop-shadow(0 0 12px rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(255,255,255,0.5));
+      filter: brightness(1.2) contrast(1.3) drop-shadow(0 0 12px rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(255,255,255,0.6));
     }
 
     @keyframes hopAcross {
-      0%   { left: -80px; }
+      0%   { left: -100px; }
       100% { left: 100vw; }
     }
     @keyframes bounce {
