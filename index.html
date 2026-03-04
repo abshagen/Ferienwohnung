@@ -27,17 +27,16 @@
       --gray: #6c757d;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { 
-      font-family: system-ui, sans-serif; 
-      line-height: 1.7; /* etwas mehr Luft für bessere Lesbarkeit */
-      color: var(--dark); 
-      background: var(--light); 
-      min-height: 100vh; 
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: var(--light);
+      min-height: 100vh;
       position: relative;
       overflow-x: hidden;
       margin-top: 50px;
     }
-
     /* Life-Ticker Banner */
     .ticker-banner {
       position: fixed;
@@ -67,7 +66,6 @@
       .ticker-banner { font-size: 0.95rem; padding: 10px 0; }
       .ticker-content { animation-duration: 28s; }
     }
-
     /* Wasserzeichen */
     .watermark-logo {
       position: fixed;
@@ -91,7 +89,6 @@
     @media (max-width: 768px) {
       .watermark-logo img { width: 70vw; max-width: 500px; opacity: 0.15; }
     }
-
     /* Hüpfender Frosch */
     .hopping-frog {
       position: fixed;
@@ -170,11 +167,6 @@
       margin-bottom: 2.5rem; 
       color: var(--primary-dark); 
     }
-    h3 { 
-      font-size: 1.8rem; 
-      margin: 2rem 0 1.2rem; 
-      color: var(--primary); 
-    }
 
     p { 
       margin-bottom: 1.4rem; 
@@ -243,6 +235,31 @@
       transition: all 0.3s;
     }
     .share-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    /* WhatsApp-Button Style */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #25D366;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(37,213,102,0.3);
+    }
+    .whatsapp-btn:hover {
+      background: #20b858;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37,213,102,0.5);
+    }
+    .whatsapp-btn span {
+      margin-right: 1rem;
+      font-size: 1.6rem;
+    }
 
     footer {
       background: var(--dark);
@@ -459,16 +476,26 @@
   </div>
 </section>
 
-<section id="kontakt" style="background:var(--dark); color:white; padding-bottom: 4rem;">
+<section id="kontakt" style="background:var(--dark); color:white; padding: 5rem 1.5rem 4rem;">
   <h2>Kontakt & Buchungsanfrage</h2>
-  <p style="text-align:center; margin-bottom:2rem; font-size:1.15rem;">
+  <p style="text-align:center; margin-bottom:1.5rem; font-size:1.15rem;">
     Familie S. Abshagen (Stefanie & Jörg)<br>
     Telefon: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a><br>
     E-Mail: abshagen@gmx.de<br>
     Service: Mo–So 08:00–22:00 Uhr | Deutsch, Englisch
   </p>
 
-  <!-- Teilen-Buttons -->
+  <!-- SAUBERER WHATSAPP-BUTTON (mit Emoji statt langem SVG) -->
+  <div style="text-align:center; margin: 2.5rem 0;">
+    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..."
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="whatsapp-btn">
+      <span>💬</span> WhatsApp schreiben
+    </a>
+  </div>
+
+  <!-- Dein bestehendes Teilen-Buttons-Block bleibt erhalten -->
   <div class="share-buttons">
     <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen%20-%20https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">Facebook</a>
@@ -476,7 +503,7 @@
     <button onclick="navigator.clipboard.writeText('https://abshagen.github.io/Ferienwohnung/'); alert('Link kopiert!');" class="share-btn">Link kopieren</button>
   </div>
 
-  <form action="https://formspree.io/f/mojnobqd" method="POST" style="max-width:600px; margin:2.5rem auto; display:grid; gap:1.3rem;">
+  <form action="https://formspree.io/f/mojnobqd" method="POST" style="max-width:600px; margin:auto; display:grid; gap:1.3rem;">
     <input type="hidden" name="_subject" value="Neue Buchungsanfrage – Ferienwohnung am Froschteich">
     <input type="text" name="name" placeholder="Ihr Name" required style="padding:1rem; border-radius:8px; border:none;">
     <input type="email" name="email" placeholder="Ihre E-Mail" required style="padding:1rem; border-radius:8px; border:none;">
@@ -490,7 +517,6 @@
 <footer>
   <div class="footer-top">
     <div></div>
-
     <div class="footer-center">
       <p style="font-size:1.1rem; margin-bottom:0.8rem;">
         <strong>Ferienwohnung am Froschteich</strong><br>
@@ -499,21 +525,18 @@
         E-Mail: <a href="mailto:abshagen@gmx.de" style="color:#f4a261;">abshagen@gmx.de</a>
       </p>
     </div>
-
     <div class="footer-links">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>
   </div>
-
-  <!-- Teilen-Buttons -->
+  <!-- Teilen-Buttons im Footer bleiben erhalten -->
   <div class="share-buttons" style="margin-top:1.8rem;">
     <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen%20-%20https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">Facebook</a>
     <a href="https://twitter.com/intent/tweet?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen&url=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">X / Twitter</a>
     <button onclick="navigator.clipboard.writeText('https://abshagen.github.io/Ferienwohnung/'); alert('Link kopiert!');" class="share-btn">Link kopieren</button>
   </div>
-
   <div class="copyright">
     © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich • Objektnummer: 4676579
   </div>
