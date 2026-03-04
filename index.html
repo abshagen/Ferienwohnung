@@ -14,6 +14,7 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
+
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
 
   <style>
@@ -28,11 +29,11 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body { 
       font-family: system-ui, sans-serif; 
-      line-height:1.6; 
-      color:var(--dark); 
-      background:var(--light); 
-      min-height:100vh; 
-      position:relative;
+      line-height: 1.7; /* etwas mehr Luft für bessere Lesbarkeit */
+      color: var(--dark); 
+      background: var(--light); 
+      min-height: 100vh; 
+      position: relative;
       overflow-x: hidden;
       margin-top: 50px;
     }
@@ -56,7 +57,7 @@
     .ticker-content {
       display: inline-block;
       white-space: nowrap;
-      animation: ticker 40s linear infinite;
+      animation: ticker 35s linear infinite;
     }
     @keyframes ticker {
       0%   { transform: translateX(100%); }
@@ -64,10 +65,10 @@
     }
     @media (max-width: 600px) {
       .ticker-banner { font-size: 0.95rem; padding: 10px 0; }
-      .ticker-content { animation-duration: 30s; }
+      .ticker-content { animation-duration: 28s; }
     }
 
-    /* Fixed Wasserzeichen – perfekt zentriert auch auf Smartphone */
+    /* Wasserzeichen */
     .watermark-logo {
       position: fixed;
       inset: 0;
@@ -88,14 +89,10 @@
       object-fit: contain;
     }
     @media (max-width: 768px) {
-      .watermark-logo img {
-        width: 70vw;
-        max-width: 500px;
-        opacity: 0.15;
-      }
+      .watermark-logo img { width: 70vw; max-width: 500px; opacity: 0.15; }
     }
 
-    /* Animierter kleiner Frosch */
+    /* Hüpfender Frosch */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
@@ -118,58 +115,174 @@
       .hopping-frog { opacity: 0.6; animation-play-state: paused; }
     }
 
-    @keyframes hopAcross {
-      0%   { left: -60px; }
-      100% { left: 100vw; }
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-20px); }
-    }
+    @keyframes hopAcross { 0% { left: -60px; } 100% { left: 100vw; } }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
     header {
-      position:relative; 
-      height:90vh; 
-      min-height:650px;
+      position: relative; 
+      height: 90vh; 
+      min-height: 650px;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
                   url('https://static.ferienhausmiete.de/pictures/175333/bilder_original/175333_79761968515171.jpg') center/cover no-repeat;
-      color:white; 
-      display:flex; 
-      flex-direction:column; 
-      align-items:center; 
-      justify-content:center; 
-      text-align:center; 
-      padding:0 1.5rem;
+      color: white; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      padding: 0 1.5rem;
       z-index: 1;
     }
-    h1 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:0.5rem; text-shadow:0 4px 12px rgba(0,0,0,0.7); }
-    .lead { font-size:1.4rem; margin-bottom:2rem; }
+    h1 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom: 0.8rem; text-shadow: 0 4px 12px rgba(0,0,0,0.7); }
+    .lead { font-size: 1.4rem; margin-bottom: 2.5rem; }
+
     .btn {
-      display:inline-block; background:var(--accent); color:white; font-size:1.3rem; font-weight:bold;
-      padding:1rem 2.2rem; border-radius:50px; text-decoration:none; transition:all 0.3s;
-      box-shadow:0 6px 20px rgba(244,162,97,0.4);
+      display: inline-block; 
+      background: var(--accent); 
+      color: white; 
+      font-size: 1.3rem; 
+      font-weight: bold;
+      padding: 1rem 2.2rem; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(244,162,97,0.4);
     }
-    .btn:hover { background:#e76f51; transform:translateY(-3px); box-shadow:0 12px 30px rgba(244,162,97,0.6); }
-    .btn-outline { background:transparent; border:2px solid white; color:white; margin-left:1.5rem; }
-    .btn-outline:hover { background:white; color:var(--dark); }
+    .btn:hover { background: #e76f51; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(244,162,97,0.6); }
+    .btn-outline { 
+      background: transparent; 
+      border: 2px solid white; 
+      color: white; 
+      margin-left: 1.5rem; 
+    }
+    .btn-outline:hover { background: white; color: var(--dark); }
 
-    section { padding:4rem 1.5rem; max-width:1200px; margin:0 auto; position:relative; z-index:1; }
-    h2 { text-align:center; font-size:2.4rem; margin-bottom:2rem; color:var(--primary-dark); }
-    h3 { font-size:1.8rem; margin:1.5rem 0 1rem; color:var(--primary); }
-    .grid-3 { display:grid; gap:1.8rem; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); }
-    .feature { text-align:center; font-size:1.05rem; }
-    .feature img { width:56px; height:56px; margin-bottom:0.8rem; filter:brightness(0) saturate(100%) invert(38%) sepia(98%) saturate(1234%) hue-rotate(170deg) brightness(98%) contrast(101%); }
-    .info-box, .rules-box, .price-table { background:#f0f8ff; border-radius:10px; padding:1.5rem; margin:1.5rem auto; max-width:900px; font-size:1.1rem; }
-    .rules-box table, .price-table table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.95rem; }
-    .rules-box th, .rules-box td, .price-table th, .price-table td { padding:0.8rem; border:1px solid #ddd; text-align:left; }
-    .rules-box th, .price-table th { background:var(--primary); color:white; }
-    .price-box { background:white; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.08); padding:2rem; text-align:center; max-width:800px; margin:0 auto; }
-    footer { background:var(--dark); color:white; text-align:center; padding:2.5rem 1rem; font-size:0.95rem; position:relative; z-index:1; }
-    footer a { color:#00d4ff; text-decoration:underline; }
+    section { 
+      padding: 5rem 1.5rem 4rem; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      position: relative; 
+      z-index: 1; 
+    }
+    h2 { 
+      text-align: center; 
+      font-size: 2.4rem; 
+      margin-bottom: 2.5rem; 
+      color: var(--primary-dark); 
+    }
+    h3 { 
+      font-size: 1.8rem; 
+      margin: 2rem 0 1.2rem; 
+      color: var(--primary); 
+    }
 
-    .pa-gallery-player-widget { border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.15); }
-    .calendar-container { max-width:900px; margin:2rem auto; }
-    .calendar-container iframe { width:100%; height:600px; border:none; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.15); }
+    p { 
+      margin-bottom: 1.4rem; 
+    }
+
+    .info-box, .rules-box, .price-table {
+      background: #f0f8ff;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      font-size: 1.1rem;
+    }
+
+    .rules-box table, .price-table table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 1rem;
+    }
+
+    .rules-box th, .rules-box td, .price-table th, .price-table td {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .rules-box th, .price-table th {
+      background: var(--primary);
+      color: white;
+    }
+
+    .pa-gallery-player-widget {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .calendar-container {
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+    .calendar-container iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    /* Teilen-Buttons */
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 1.8rem 0;
+    }
+    .share-btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.7rem 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+    .share-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3.5rem 1.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid #444;
+    }
+    footer .footer-top {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+    footer .footer-center {
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    footer .footer-links a {
+      color: var(--accent);
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer .footer-links a:hover { color: white; }
+    footer .copyright {
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--gray);
+      border-top: 1px solid #444;
+      padding-top: 1.8rem;
+    }
   </style>
 </head>
 <body>
@@ -196,7 +309,7 @@
     <h1>Ferienwohnung am Froschteich</h1>
     <p class="lead">Dorfstr. 8, 18556 Putgarten – nördlichster Zipfel von Rügen | Bis 5 Personen | Haustiere willkommen | 1 km zum Strand</p>
     <a href="#verfuegbarkeit" class="btn">Verfügbarkeit prüfen & anfragen</a>
-    <a href="#kontakt" class="btn btn-outline">Direkt kontaktieren</a>
+    <a href="#kontakt" class="btn btn-outline" style="background:var(--accent); color:white; font-weight:bold;">Jetzt direkt anfragen</a>
   </div>
 </header>
 
@@ -212,7 +325,7 @@
 
 <section id="galerie">
   <h2>Fotogalerie</h2>
-  <p style="text-align:center; margin-bottom:2rem; color:var(--gray);">
+  <p style="text-align:center; margin-bottom:2.5rem; color:var(--gray);">
     Unsere Ferienwohnung in Bildern – klicken oder tippen Sie zum Vergrößern
   </p>
 
@@ -222,13 +335,26 @@
     data-title="Putgarten · Apr 30, 2017 – Mar 27, 2025 📸"
     data-description="Shared album · Tap to view!">
     <object data="https://lh3.googleusercontent.com/pw/AP1GczMqOcTsmbxAIuLfOyDFNNOVKFSdUt339evq6SJCc4J3D9EolgOTw1RW5eXfrmk0s5gWcRl1_eBn7aTqc9wrOhTrEE7McKV_JgD8kO9RHJ4Td3sJmkZT=w1920-h1080"></object>
-    <!-- ... alle weiteren object-Tags bleiben gleich ... -->
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczP37xHsHe7fpdpxRkHbTt3maCoeNNdSOV_ofmG7olELBE5rR4jgCPJObK5ac4UfqAsEzo-hGHFb52Z5iXGOqny_PwNrf2fR7IwRgdB3CG47GFGYMMye=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczMfUzP1hClWxUisMM9ftEvdc0LQkNmvT8aeq073gIo4SZpGBm3Y7vOYXz-7_tAEjSfAhOryeX5gbRuNtVQuT8QaUvHt8Ms-IwLv8sdXI4vs0JktMBCW=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczOWZ-i5aG_6wsg_IWPNbTojtf3xCGLZ48S1Pn0u9yFXYg8bIN-5Jc2GOPRmo-nx5k8ZT2wuMmvd5woCKjAYQS6y__vLakUiig5pKSmQ6FEUpHWgsn9R=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczMleh26LkLVC8ZbUZ473BVh5JW0I6l-dGgni9kIZUES7KUQXeLfCzBDQYtGgn6lTnf7su4BwJsEGfYL-qGZZWQ2ABaUPeNoniUCqkJ2P21t9LL86f_i=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczOBSCodCy4iHdxUwofY7WEatYzsszyri1RAsgOKAG-4LuuWA4JHbC3SDY75yszkq8b9oqjqKuJsqYq9eOi3AEqUrNDs-X-e-f-JpXzYZpSuC6ct0XMa=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczPE4-AVCWdwisuH9-zCWJEVU4ZafP_4M10kLXi5pNac-O4Ugrgh0okeGXOariWgYjBMj8ptrioRmZ6DufKGFw37AltYyx7FTAVomevkufEMbvecb9Ep=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczNMm8JMUGdyg7jcVqwnU-bVYzA_e44VFtzHJEyuooKJYyWK8NLV_k45SNo74wSgO8qN0EEkn1mktlGrj6OxSZzzi122KoIEciwYKY9NI9jqR0xQqhDk=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczPCJ15X1-MQg0O7BQ2ISVZL6L5A7r7AmH-krkBLzBR5syEpoOlmgvmEwThfESqI7gKa14ONx3O3vSBxBv2zbDYxCJMymNa-E_t6U_XcU3wFLjJykmhk=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczMcG8Pj6NaLEb7nidivAaM78xYEmi_86fpuFwVPNuLBatCd3MMAaB_uGFmuWj0xOVsALuNOCBI41630TQp30N_N_f3VCfvoKcIVe1xSjG5oo1byhDBK=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczPCGDObtK6PWGj1Eq7ewyYdZiEa9WtRhF4vuudOY_i6aein9GgV12biJ8DFH4ryQdqYCf8l51uAWzYMsF54wbKOivYECWs3yJ1b9ovwpUPUfb05sM7n=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczOJ3NlZSHx9VDylvc8ekWZwgCYYk7X8YkF0gTJO-FGmWEAJatwpvAiYsIEuUhkVS8kPRn5RTe-PC1-16y5Z0aLN5q_gwR6-Buvh462_XfvdV6dQOCgO=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczN5LDe1eGTQI-aTHkjhIt0d85qyMp5O8iBla92Y7u1DF6q_ECz650mtSaxo6Q7PH-fUYK6GH-luYW9YvVEMMljZ43QiISy3cTZm7onwkHDwnjadhOGJ=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczNrjq1Z2PPXT-INaDyn7e6RzaV_rpfcncySZoV6gwTbIfRIlBejcNh7CXZx9NtWvwMoTa80L2YULbWBNI1kmMy_yq_dwoGAS35qQjJLoiUt956cj1Is=w1920-h1080"></object>
+    <object data="https://lh3.googleusercontent.com/pw/AP1GczOd118aZVlg7fiIjAuyrthcTia2LlCx244DIH4wyc5qm2QCuBphdv03ceT6qKFePlrGE-qMNDE7ecl6JxDSoqJlug2svdVRbuh0r0grO_ha1Jsf5Dtx=w1920-h1080"></object>
   </div>
 </section>
 
-<section id="verfuegbarkeit" style="background:#f8f9fa; padding:3rem 1.5rem; text-align:center;">
+<section id="verfuegbarkeit" style="background:#f8f9fa; padding:4rem 1.5rem; text-align:center;">
   <h2>Verfügbarkeit prüfen</h2>
-  <p style="font-size:1.2rem; margin:1.5rem 0 2rem;">
+  <p style="font-size:1.2rem; margin-bottom:2rem;">
     Sehen Sie live, wann unsere Ferienwohnung in Dorfstr. 8, 18556 Putgarten frei ist – oder fragen Sie direkt unverbindlich an!
   </p>
 
@@ -241,7 +367,7 @@
     <span style="font-size:9px;"><a href="https://www.belegungskalender-kostenlos.de" rel="nofollow noopener" target="_blank" style="font-size:9px;">kosteloser Buchungskalender</a></span>
   </div>
 
-  <p style="font-size:1.1rem; margin:2rem 0;">
+  <p style="font-size:1.1rem; margin:2rem 0 1.5rem;">
     Keine freien Termine? Oder Fragen? Schreiben Sie uns einfach!
   </p>
 
@@ -250,23 +376,23 @@
   </a>
 </section>
 
-<!-- Bewertungen nach Kalender -->
 <section id="bewertungen" style="background:#f8f9fa; padding:4rem 1.5rem; text-align:center;">
   <h2>Was unsere Gäste sagen</h2>
-  <p style="margin-bottom:2rem; font-size:1.2rem;">Echte Bewertungen von Google</p>
+  <p style="margin-bottom:2.5rem; font-size:1.2rem;">
+    Echte Bewertungen von Google
+  </p>
 
   <div class="google-reviews-widget">
     <script defer async src='https://cdn.trustindex.io/loader.js?f6304db66a3d286ca2567c2dc22'></script>
   </div>
 
-  <p style="margin-top:2rem; font-size:1.1rem;">
+  <p style="margin-top:2.5rem; font-size:1.1rem;">
     <a href="https://maps.app.goo.gl/udNsCGiRC5gpczzp8" target="_blank" style="color:var(--primary); font-weight:bold; text-decoration:underline;">
       Jetzt selbst eine Bewertung schreiben →
     </a>
   </p>
 </section>
 
-<!-- Preise -->
 <section id="preise">
   <h2>Preise & Kosten</h2>
   <div class="price-table">
@@ -280,18 +406,16 @@
       <tr><td>Kurtaxe (pro Person/Tag – separat zu zahlen)</td><td>siehe Hausregeln</td></tr>
     </table>
 
-    <p style="margin-top:1.5rem; font-size:1rem; font-weight:bold; color:var(--primary-dark);">
+    <p style="margin-top:1.8rem; font-size:1rem; font-weight:bold; color:var(--primary-dark);">
       Keine Umsatzsteuer gemäß § 19 UStG (Kleinunternehmerregelung)
     </p>
 
-    <p style="margin-top:1rem; font-size:0.95rem; color:var(--gray);">
+    <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--gray);">
       Alle Preise sind Endpreise (Bruttopreise), die der Gast zahlt. Keine versteckten Kosten.  
       Stand: März 2026 – Preise können saisonal variieren.
     </p>
   </div>
 </section>
-
-<!-- Regeln, Kontakt, Footer bleiben gleich -->
 
 <section id="regeln">
   <h2>Hausregeln & Wichtige Hinweise</h2>
@@ -320,7 +444,7 @@
 
     <p><strong>HS:</strong> 01. Mai - 15. Sept. 1,50 € (voll) / 1,00 € (ermäßigt)</p>
     <p><strong>NS:</strong> 01. Okt. - 30. April 1,00 € (voll) / 0,50 € (ermäßigt)</p>
-    <p style="font-size:0.9rem; margin-top:1rem;">Stand 2019 (ohne Gewähr)</p>
+    <p style="font-size:0.95rem; margin-top:1.5rem;">Stand 2019 (ohne Gewähr)</p>
 
     <h3>Stornierungsbedingungen</h3>
     <p>Bei Stornierung mindestens 7 Tage vor Check-in bis 12 Uhr MEZ: 50 % Rückerstattung abzüglich Stornogebühr.<br>Bei Stornierung weniger als 7 Tage vor Check-in: keine Rückerstattung.</p>
@@ -335,17 +459,24 @@
   </div>
 </section>
 
-<section id="kontakt" style="background:var(--dark); color:white;">
+<section id="kontakt" style="background:var(--dark); color:white; padding-bottom: 4rem;">
   <h2>Kontakt & Buchungsanfrage</h2>
   <p style="text-align:center; margin-bottom:2rem; font-size:1.15rem;">
     Familie S. Abshagen (Stefanie & Jörg)<br>
-    Telefon: 0049 (0)201 8385667<br>
-    Mobil: 0049 (0)162 7320763<br>
+    Telefon: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a><br>
     E-Mail: abshagen@gmx.de<br>
     Service: Mo–So 08:00–22:00 Uhr | Deutsch, Englisch
   </p>
 
-  <form action="https://formspree.io/f/mojnobqd" method="POST" style="max-width:600px; margin:auto; display:grid; gap:1.2rem;">
+  <!-- Teilen-Buttons -->
+  <div class="share-buttons">
+    <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen%20-%20https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen&url=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">X / Twitter</a>
+    <button onclick="navigator.clipboard.writeText('https://abshagen.github.io/Ferienwohnung/'); alert('Link kopiert!');" class="share-btn">Link kopieren</button>
+  </div>
+
+  <form action="https://formspree.io/f/mojnobqd" method="POST" style="max-width:600px; margin:2.5rem auto; display:grid; gap:1.3rem;">
     <input type="hidden" name="_subject" value="Neue Buchungsanfrage – Ferienwohnung am Froschteich">
     <input type="text" name="name" placeholder="Ihr Name" required style="padding:1rem; border-radius:8px; border:none;">
     <input type="email" name="email" placeholder="Ihre E-Mail" required style="padding:1rem; border-radius:8px; border:none;">
@@ -357,11 +488,35 @@
 </section>
 
 <footer>
-  <p>© 2026 Ferienwohnung am Froschteich – Dorfstr. 8, 18556 Putgarten • Objektnummer: 4676579</p>
-  <p style="margin-top:1rem;">
-    <a href="impressum.html" style="color:#00d4ff; margin-right:1rem;">Impressum</a> • 
-    <a href="datenschutz.html" style="color:#00d4ff;">Datenschutz</a>
-  </p>
+  <div class="footer-top">
+    <div></div>
+
+    <div class="footer-center">
+      <p style="font-size:1.1rem; margin-bottom:0.8rem;">
+        <strong>Ferienwohnung am Froschteich</strong><br>
+        Dorfstr. 8, 18556 Putgarten<br>
+        Telefon: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a><br>
+        E-Mail: <a href="mailto:abshagen@gmx.de" style="color:#f4a261;">abshagen@gmx.de</a>
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+
+  <!-- Teilen-Buttons -->
+  <div class="share-buttons" style="margin-top:1.8rem;">
+    <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen%20-%20https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen&url=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">X / Twitter</a>
+    <button onclick="navigator.clipboard.writeText('https://abshagen.github.io/Ferienwohnung/'); alert('Link kopiert!');" class="share-btn">Link kopieren</button>
+  </div>
+
+  <div class="copyright">
+    © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich • Objektnummer: 4676579
+  </div>
 </footer>
 
 </body>
