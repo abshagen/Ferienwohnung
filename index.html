@@ -15,10 +15,11 @@
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon optimiert (größer, transparent) -->
+  <!-- Favicon – größer und schärfer -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="64x64" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="apple-touch-icon" sizes="120x120" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
 
@@ -42,7 +43,7 @@
       overflow-x: hidden;
     }
 
-    /* Fixed Wasserzeichen – bleibt immer sichtbar */
+    /* Fixed Wasserzeichen */
     .watermark-logo {
       position: fixed;
       top: 50%;
@@ -62,13 +63,13 @@
       object-fit: contain;
     }
 
-    /* Animierter kleiner Frosch – stärker hervorgehoben vor dunklem Hintergrund */
+    /* Animierter kleiner Frosch – jetzt kleiner */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
-      left: -100px;
-      width: 100px;
-      height: 100px;
+      left: -60px;
+      width: 60px;           /* kleiner als zuvor */
+      height: 60px;
       pointer-events: none;
       z-index: 9999;
       animation: hopAcross 30s linear infinite;
@@ -83,12 +84,12 @@
     }
 
     @keyframes hopAcross {
-      0%   { left: -100px; }
+      0%   { left: -60px; }
       100% { left: 100vw; }
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-28px); }
+      50%      { transform: translateY(-20px); }  /* angepasst an kleinere Größe */
     }
 
     header {
@@ -143,7 +144,7 @@
   <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="">
 </div>
 
-<!-- Hüpfender kleiner Frosch -->
+<!-- Hüpfender kleiner Frosch – jetzt kleiner -->
 <div class="hopping-frog">
   <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="Hüpfender Frosch">
 </div>
