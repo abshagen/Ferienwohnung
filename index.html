@@ -37,7 +37,8 @@
       overflow-x: hidden;
       margin-top: 50px;
     }
-    /* Life-Ticker Banner */
+
+    /* Life-Ticker Banner – schneller & flüssiger Start */
     .ticker-banner {
       position: fixed;
       top: 0;
@@ -56,16 +57,18 @@
     .ticker-content {
       display: inline-block;
       white-space: nowrap;
-      animation: ticker 35s linear infinite;
+      padding-left: 100%;
+      animation: ticker 30s linear infinite;
     }
     @keyframes ticker {
-      0%   { transform: translateX(100%); }
+      0%   { transform: translateX(0); }
       100% { transform: translateX(-100%); }
     }
     @media (max-width: 600px) {
       .ticker-banner { font-size: 0.95rem; padding: 10px 0; }
-      .ticker-content { animation-duration: 28s; }
+      .ticker-content { animation-duration: 24s; }
     }
+
     /* Wasserzeichen */
     .watermark-logo {
       position: fixed;
@@ -89,7 +92,8 @@
     @media (max-width: 768px) {
       .watermark-logo img { width: 70vw; max-width: 500px; opacity: 0.15; }
     }
-    /* Hüpfender Frosch */
+
+    /* Hüpfender Frosch – auf Smartphone komplett aus */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
@@ -109,7 +113,7 @@
       filter: brightness(1.2) contrast(1.3) drop-shadow(0 0 12px rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(255,255,255,0.6));
     }
     @media (max-width: 768px) {
-      .hopping-frog { opacity: 0.6; animation-play-state: paused; }
+      .hopping-frog { display: none; }
     }
 
     @keyframes hopAcross { 0% { left: -60px; } 100% { left: 100vw; } }
@@ -217,7 +221,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
-    /* Teilen-Buttons */
+    /* Teilen-Buttons (nur im Kontakt-Bereich) */
     .share-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -236,7 +240,7 @@
     }
     .share-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
-    /* WhatsApp-Button Style */
+    /* WhatsApp-Button */
     .whatsapp-btn {
       display: inline-flex;
       align-items: center;
@@ -485,8 +489,8 @@
     Service: Mo–So 08:00–22:00 Uhr | Deutsch, Englisch
   </p>
 
-  <!-- SAUBERER WHATSAPP-BUTTON (mit Emoji statt langem SVG) -->
-  <div style="text-align:center; margin: 2.5rem 0;">
+  <!-- SAUBERER WHATSAPP-BUTTON -->
+  <div style="text-align:center; margin:2.5rem 0;">
     <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..."
        target="_blank" 
        rel="noopener noreferrer"
@@ -495,7 +499,7 @@
     </a>
   </div>
 
-  <!-- Dein bestehendes Teilen-Buttons-Block bleibt erhalten -->
+  <!-- Teilen-Buttons bleiben nur hier -->
   <div class="share-buttons">
     <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen%20-%20https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">Facebook</a>
@@ -529,13 +533,6 @@
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>
-  </div>
-  <!-- Teilen-Buttons im Footer bleiben erhalten -->
-  <div class="share-buttons" style="margin-top:1.8rem;">
-    <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen%20-%20https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">WhatsApp</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">Facebook</a>
-    <a href="https://twitter.com/intent/tweet?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen&url=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">X / Twitter</a>
-    <button onclick="navigator.clipboard.writeText('https://abshagen.github.io/Ferienwohnung/'); alert('Link kopiert!');" class="share-btn">Link kopieren</button>
   </div>
   <div class="copyright">
     © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich • Objektnummer: 4676579
