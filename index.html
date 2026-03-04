@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogo.jpg" />
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
-  <!-- Favicon -->
+  <!-- Favicon: dein Froschlogo -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogo.jpg" type="image/jpeg">
 
   <style>
@@ -33,17 +33,17 @@
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
                   url('https://static.ferienhausmiete.de/pictures/175333/bilder_original/175333_79761968515171.jpg') center/cover no-repeat;
       color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 1.5rem;
-      overflow: hidden; /* damit das Wasserzeichen nicht rausläuft */
+      overflow: hidden;
     }
     .watermark-logo {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 70%; /* Größe: 50% kleiner, 90% größer */
+      width: 70%;
       max-width: 600px;
-      opacity: 0.12; /* sehr dezent – 0.08 noch schwächer, 0.18 stärker */
-      filter: blur(6px); /* Weichzeichner für Wasserzeichen-Look */
+      opacity: 0.12;
+      filter: blur(6px);
       pointer-events: none;
       z-index: -1;
     }
@@ -54,7 +54,7 @@
     }
     .hero-content {
       position: relative;
-      z-index: 1; /* Text bleibt darüber */
+      z-index: 1;
     }
     h1 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:0.5rem; text-shadow:0 4px 12px rgba(0,0,0,0.7); }
     .lead { font-size:1.4rem; margin-bottom:2rem; }
