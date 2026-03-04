@@ -92,7 +92,7 @@
       .watermark-logo img { width: 70vw; max-width: 500px; opacity: 0.15; }
     }
 
-    /* Hüpfender Frosch – Variante 1: Auch auf Smartphone sichtbar */
+    /* Hüpfender Frosch – auch auf Smartphone sichtbar (Variante 1) */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
@@ -111,7 +111,6 @@
       opacity: 0.95;
       filter: brightness(1.2) contrast(1.3) drop-shadow(0 0 12px rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(255,255,255,0.6));
     }
-    /* Auf sehr kleinen Bildschirmen etwas kleiner machen */
     @media (max-width: 480px) {
       .hopping-frog {
         width: 50px;
@@ -269,44 +268,78 @@
       font-size: 1.6rem;
     }
 
+    /* Footer – mobil optimiert */
     footer {
       background: var(--dark);
       color: white;
-      padding: 3.5rem 1.5rem 2rem;
+      padding: 2.5rem 1rem 1.5rem;
       text-align: center;
       border-top: 1px solid #444;
     }
-    footer .footer-top {
+
+    .footer-top {
       max-width: 1200px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 1.5rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
-    footer .footer-center {
-      font-size: 1.1rem;
-      line-height: 1.9;
-    }
-    footer .footer-links {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
+
+    .footer-center {
       font-size: 1rem;
+      line-height: 1.6;
     }
-    footer .footer-links a {
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
       color: var(--accent);
       font-weight: bold;
       text-decoration: none;
       transition: color 0.3s;
     }
-    footer .footer-links a:hover { color: white; }
-    footer .copyright {
-      margin-top: 2.5rem;
-      font-size: 0.95rem;
+
+    .footer-links a:hover { color: white; }
+
+    .copyright {
+      font-size: 0.9rem;
       color: var(--gray);
       border-top: 1px solid #444;
-      padding-top: 1.8rem;
+      padding-top: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    /* Mobile Footer-Optimierung */
+    @media (max-width: 768px) {
+      footer {
+        padding: 2rem 1rem 1.5rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .footer-center {
+        font-size: 0.95rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .copyright {
+        font-size: 0.85rem;
+        padding-top: 1rem;
+        margin-top: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -524,7 +557,6 @@
 
 <footer>
   <div class="footer-top">
-    <div></div>
     <div class="footer-center">
       <p style="font-size:1.1rem; margin-bottom:0.8rem;">
         <strong>Ferienwohnung am Froschteich</strong><br>
@@ -533,11 +565,13 @@
         E-Mail: <a href="mailto:abshagen@gmx.de" style="color:#f4a261;">abshagen@gmx.de</a>
       </p>
     </div>
+
     <div class="footer-links">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>
   </div>
+
   <div class="copyright">
     © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich • Objektnummer: 4676579
   </div>
