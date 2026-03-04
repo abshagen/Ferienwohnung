@@ -14,8 +14,6 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
-
-  <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
 
   <style>
@@ -36,7 +34,7 @@
       min-height:100vh; 
       position:relative;
       overflow-x: hidden;
-      margin-top: 50px; /* Platz für Banner */
+      margin-top: 50px;
     }
 
     /* Life-Ticker Banner */
@@ -58,7 +56,7 @@
     .ticker-content {
       display: inline-block;
       white-space: nowrap;
-      animation: ticker 35s linear infinite;
+      animation: ticker 40s linear infinite;
     }
     @keyframes ticker {
       0%   { transform: translateX(100%); }
@@ -66,24 +64,38 @@
     }
     @media (max-width: 600px) {
       .ticker-banner { font-size: 0.95rem; padding: 10px 0; }
-      .ticker-content { animation-duration: 28s; }
+      .ticker-content { animation-duration: 30s; }
     }
 
-    /* Fixed Wasserzeichen */
+    /* Fixed Wasserzeichen – perfekt zentriert auch auf Smartphone */
     .watermark-logo {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 85vw;
-      max-width: 900px;
-      opacity: 0.18;
-      filter: blur(5px);
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       pointer-events: none;
       z-index: -999;
+      user-select: none;
+      overflow: hidden;
+    }
+    .watermark-logo img {
+      width: 85vw;
+      max-width: 900px;
+      max-height: 85vh;
+      opacity: 0.18;
+      filter: blur(5px);
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      .watermark-logo img {
+        width: 70vw;
+        max-width: 500px;
+        opacity: 0.15;
+      }
     }
 
-    /* Animierter Frosch – kleiner auf Mobil */
+    /* Animierter kleiner Frosch */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
@@ -133,24 +145,12 @@
     h1 { font-size: clamp(3rem, 7vw, 5rem); margin-bottom:0.5rem; text-shadow:0 4px 12px rgba(0,0,0,0.7); }
     .lead { font-size:1.4rem; margin-bottom:2rem; }
     .btn {
-      display:inline-block; 
-      background:var(--accent); 
-      color:white; 
-      font-size:1.3rem; 
-      font-weight:bold;
-      padding:1rem 2.2rem; 
-      border-radius:50px; 
-      text-decoration:none; 
-      transition:all 0.3s;
+      display:inline-block; background:var(--accent); color:white; font-size:1.3rem; font-weight:bold;
+      padding:1rem 2.2rem; border-radius:50px; text-decoration:none; transition:all 0.3s;
       box-shadow:0 6px 20px rgba(244,162,97,0.4);
     }
     .btn:hover { background:#e76f51; transform:translateY(-3px); box-shadow:0 12px 30px rgba(244,162,97,0.6); }
-    .btn-outline {
-      background:transparent; 
-      border:2px solid white; 
-      color:white; 
-      margin-left:1.5rem;
-    }
+    .btn-outline { background:transparent; border:2px solid white; color:white; margin-left:1.5rem; }
     .btn-outline:hover { background:white; color:var(--dark); }
 
     section { padding:4rem 1.5rem; max-width:1200px; margin:0 auto; position:relative; z-index:1; }
@@ -196,7 +196,7 @@
     <h1>Ferienwohnung am Froschteich</h1>
     <p class="lead">Dorfstr. 8, 18556 Putgarten – nördlichster Zipfel von Rügen | Bis 5 Personen | Haustiere willkommen | 1 km zum Strand</p>
     <a href="#verfuegbarkeit" class="btn">Verfügbarkeit prüfen & anfragen</a>
-    <a href="#kontakt" class="btn btn-outline" style="background:var(--accent); color:white; font-weight:bold;">Jetzt direkt anfragen</a>
+    <a href="#kontakt" class="btn btn-outline">Direkt kontaktieren</a>
   </div>
 </header>
 
@@ -222,11 +222,10 @@
     data-title="Putgarten · Apr 30, 2017 – Mar 27, 2025 📸"
     data-description="Shared album · Tap to view!">
     <object data="https://lh3.googleusercontent.com/pw/AP1GczMqOcTsmbxAIuLfOyDFNNOVKFSdUt339evq6SJCc4J3D9EolgOTw1RW5eXfrmk0s5gWcRl1_eBn7aTqc9wrOhTrEE7McKV_JgD8kO9RHJ4Td3sJmkZT=w1920-h1080"></object>
-    <!-- ... alle anderen object-Tags bleiben gleich ... -->
+    <!-- ... alle weiteren object-Tags bleiben gleich ... -->
   </div>
 </section>
 
-<!-- Google Bewertungen Widget – jetzt nach Kalender -->
 <section id="verfuegbarkeit" style="background:#f8f9fa; padding:3rem 1.5rem; text-align:center;">
   <h2>Verfügbarkeit prüfen</h2>
   <p style="font-size:1.2rem; margin:1.5rem 0 2rem;">
@@ -251,7 +250,7 @@
   </a>
 </section>
 
-<!-- Bewertungen jetzt hier (nach Kalender) -->
+<!-- Bewertungen nach Kalender -->
 <section id="bewertungen" style="background:#f8f9fa; padding:4rem 1.5rem; text-align:center;">
   <h2>Was unsere Gäste sagen</h2>
   <p style="margin-bottom:2rem; font-size:1.2rem;">Echte Bewertungen von Google</p>
@@ -267,8 +266,7 @@
   </p>
 </section>
 
-<!-- Preise, Regeln, Kontakt, Footer bleiben gleich -->
-
+<!-- Preise -->
 <section id="preise">
   <h2>Preise & Kosten</h2>
   <div class="price-table">
@@ -292,6 +290,8 @@
     </p>
   </div>
 </section>
+
+<!-- Regeln, Kontakt, Footer bleiben gleich -->
 
 <section id="regeln">
   <h2>Hausregeln & Wichtige Hinweise</h2>
@@ -339,7 +339,8 @@
   <h2>Kontakt & Buchungsanfrage</h2>
   <p style="text-align:center; margin-bottom:2rem; font-size:1.15rem;">
     Familie S. Abshagen (Stefanie & Jörg)<br>
-    Telefon: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a><br>
+    Telefon: 0049 (0)201 8385667<br>
+    Mobil: 0049 (0)162 7320763<br>
     E-Mail: abshagen@gmx.de<br>
     Service: Mo–So 08:00–22:00 Uhr | Deutsch, Englisch
   </p>
