@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -11,11 +11,10 @@
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
   <meta property="og:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen" />
   <meta property="og:description" content="Gemütliche Ferienwohnung für bis zu 5 Personen, Dorfstr. 8, Putgarten. Direkt am Froschteich, 1 km zum Strand, Haustiere willkommen." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogo.jpg" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
-  <!-- Favicon -->
-  <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogo.jpg" type="image/jpeg">
+  <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
 
   <style>
     :root {
@@ -34,6 +33,7 @@
       background:var(--light); 
       min-height:100vh; 
       position:relative;
+      overflow-x: hidden;
     }
 
     /* Fixed Wasserzeichen – bleibt immer sichtbar */
@@ -54,6 +54,35 @@
       width: 100%;
       height: auto;
       object-fit: contain;
+    }
+
+    /* Animierter kleiner Frosch – nur Konturen, hüpft sanft */
+    .hopping-frog {
+      position: fixed;
+      bottom: 20%;
+      left: -80px;
+      width: 80px;
+      height: 80px;
+      pointer-events: none;
+      z-index: 9999;
+      animation: hopAcross 30s linear infinite;
+    }
+    .hopping-frog img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      animation: bounce 1.6s infinite ease-in-out;
+      opacity: 0.95;
+      filter: brightness(1.1) contrast(1.15) drop-shadow(0 0 8px rgba(0,0,0,0.6));
+    }
+
+    @keyframes hopAcross {
+      0%   { left: -80px; }
+      100% { left: 100vw; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-28px); }
     }
 
     header {
@@ -103,9 +132,14 @@
 </head>
 <body>
 
-<!-- Fixed Wasserzeichen – bleibt immer sichtbar -->
+<!-- Fixed Wasserzeichen -->
 <div class="watermark-logo">
-  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogo.jpg" alt="">
+  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="">
+</div>
+
+<!-- Hüpfender kleiner Frosch -->
+<div class="hopping-frog">
+  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="Hüpfender Frosch">
 </div>
 
 <header>
