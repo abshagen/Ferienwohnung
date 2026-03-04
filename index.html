@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon – größer und schärfer -->
+  <!-- Favicon optimiert -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="64x64" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
@@ -41,6 +41,46 @@
       min-height:100vh; 
       position:relative;
       overflow-x: hidden;
+      margin-top: 50px; /* Platz für den Banner oben schaffen */
+    }
+
+    /* Life-Ticker Banner – immer oben sichtbar */
+    .ticker-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #c0392b;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px 0;
+      overflow: hidden;
+      z-index: 99999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-size: 1.1rem;
+    }
+
+    .ticker-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker 40s linear infinite;
+    }
+
+    @keyframes ticker {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Auf kleinen Bildschirmen anpassen */
+    @media (max-width: 600px) {
+      .ticker-banner {
+        font-size: 0.95rem;
+        padding: 10px 0;
+      }
+      .ticker-content {
+        animation-duration: 30s;
+      }
     }
 
     /* Fixed Wasserzeichen */
@@ -63,12 +103,12 @@
       object-fit: contain;
     }
 
-    /* Animierter kleiner Frosch – jetzt kleiner */
+    /* Animierter kleiner Frosch */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
       left: -60px;
-      width: 60px;           /* kleiner als zuvor */
+      width: 60px;
       height: 60px;
       pointer-events: none;
       z-index: 9999;
@@ -89,7 +129,7 @@
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-20px); }  /* angepasst an kleinere Größe */
+      50%      { transform: translateY(-20px); }
     }
 
     header {
@@ -139,12 +179,19 @@
 </head>
 <body>
 
+<!-- Life-Ticker Banner – immer oben sichtbar -->
+<div class="ticker-banner">
+  <div class="ticker-content">
+    Leider bleibt unsere Ferienwohnung in der ersten Jahreshälfte 2026 aufgrund von Sanierungsarbeiten geschlossen. Anfragen darüber hinaus nehmen wir jedoch gerne entgegen. Eure Familie Abshagen.
+  </div>
+</div>
+
 <!-- Fixed Wasserzeichen -->
 <div class="watermark-logo">
   <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="">
 </div>
 
-<!-- Hüpfender kleiner Frosch – jetzt kleiner -->
+<!-- Hüpfender kleiner Frosch -->
 <div class="hopping-frog">
   <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="Hüpfender Frosch">
 </div>
