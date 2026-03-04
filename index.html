@@ -38,7 +38,7 @@
       margin-top: 50px;
     }
 
-    /* Life-Ticker Banner – schneller & flüssiger Start */
+    /* Life-Ticker Banner */
     .ticker-banner {
       position: fixed;
       top: 0;
@@ -57,16 +57,15 @@
     .ticker-content {
       display: inline-block;
       white-space: nowrap;
-      padding-left: 100%;
-      animation: ticker 30s linear infinite;
+      animation: ticker 35s linear infinite;
     }
     @keyframes ticker {
-      0%   { transform: translateX(0); }
+      0%   { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
     @media (max-width: 600px) {
       .ticker-banner { font-size: 0.95rem; padding: 10px 0; }
-      .ticker-content { animation-duration: 24s; }
+      .ticker-content { animation-duration: 28s; }
     }
 
     /* Wasserzeichen */
@@ -93,7 +92,7 @@
       .watermark-logo img { width: 70vw; max-width: 500px; opacity: 0.15; }
     }
 
-    /* Hüpfender Frosch – auf Smartphone komplett aus */
+    /* Hüpfender Frosch – Variante 1: Auch auf Smartphone sichtbar */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
@@ -112,8 +111,13 @@
       opacity: 0.95;
       filter: brightness(1.2) contrast(1.3) drop-shadow(0 0 12px rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(255,255,255,0.6));
     }
-    @media (max-width: 768px) {
-      .hopping-frog { display: none; }
+    /* Auf sehr kleinen Bildschirmen etwas kleiner machen */
+    @media (max-width: 480px) {
+      .hopping-frog {
+        width: 50px;
+        height: 50px;
+        bottom: 15%;
+      }
     }
 
     @keyframes hopAcross { 0% { left: -60px; } 100% { left: 100vw; } }
@@ -221,7 +225,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
-    /* Teilen-Buttons (nur im Kontakt-Bereich) */
+    /* Teilen-Buttons */
     .share-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -499,7 +503,7 @@
     </a>
   </div>
 
-  <!-- Teilen-Buttons bleiben nur hier -->
+  <!-- Teilen-Buttons bleiben erhalten -->
   <div class="share-buttons">
     <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20auf%20Rügen%20-%20https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://abshagen.github.io/Ferienwohnung/" target="_blank" class="share-btn">Facebook</a>
