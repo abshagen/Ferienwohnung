@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- Google tag (gtag.js) – Google Ads Conversion Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17943887087"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17943887087');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Optimierte Meta-Tags mit einheitlichem Titel -->
   <title>Ferienwohnung am Froschteich – Putgarten / Rügen</title>
-  <meta name="description" content="Idyllische Ferienwohnung für bis zu 5 Personen in Putgarten auf Rügen, Dorfstr. 8. Ruhige Lage direkt am Froschteich, 1 km zum Strand, Haustiere willkommen. Ab 80 €/Nacht (Kleinunternehmer)." />
-  <meta name="keywords" content="Ferienwohnung Putgarten, Rügen Ferienwohnung, Froschteich, Kap Arkona, Haustiere erlaubt, Rügen Urlaub, Putgarten Unterkunft" />
+  <meta name="description" content="Ferienwohnung am Froschteich in Putgarten auf Rügen für bis zu 5 Personen. Ruhige Lage direkt am Teich, 1 km zum Strand, Haustiere willkommen. Ab 80 €/Nacht. Jetzt anfragen!" />
+  <meta name="keywords" content="Ferienwohnung am Froschteich, Putgarten Ferienwohnung, Rügen Ferienwohnung, Froschteich, Kap Arkona, Haustiere erlaubt, Rügen Urlaub" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Stefanie & Jörg Abshagen" />
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen" />
+  <meta property="og:description" content="Ferienwohnung am Froschteich in Putgarten auf Rügen für bis zu 5 Personen. Ruhige Lage direkt am Teich, 1 km zum Strand, Haustiere willkommen. Ab 80 €/Nacht. Jetzt anfragen!" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
+  <meta property="og:url" content="https://abshagen.github.io/Ferienwohnung/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen" />
+  <meta name="twitter:description" content="Ferienwohnung am Froschteich in Putgarten auf Rügen. Direkt am Teich, 1 km Strand, Hunde willkommen. Ab 80 €/Nacht!" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
 
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
 
@@ -41,7 +65,7 @@
       "opens": "08:00",
       "closes": "22:00"
     },
-    "description": "Idyllische Ferienwohnung für bis zu 5 Personen direkt am Froschteich in Putgarten auf Rügen. Ruhige Lage, 1 km zum Strand, Haustiere willkommen, WLAN, Terrasse, Grillmöglichkeit. Ab 80 €/Nacht (Kleinunternehmerregelung)."
+    "description": "Ferienwohnung am Froschteich in Putgarten auf Rügen für bis zu 5 Personen. Ruhige Lage direkt am Teich, 1 km zum Strand, Haustiere willkommen, WLAN, Terrasse, Grillmöglichkeit. Ab 80 €/Nacht."
   }
   </script>
 
@@ -64,9 +88,12 @@
       margin-top: 60px;
     }
 
+    /* Life-Ticker Banner */
     .ticker-banner {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       background: #c0392b;
       color: white;
       font-weight: bold;
@@ -91,6 +118,7 @@
       .ticker-content { animation-duration: 24s; }
     }
 
+    /* Wasserzeichen */
     .watermark-logo {
       position: fixed;
       inset: 0;
@@ -110,6 +138,7 @@
       .watermark-logo img { width: 70vw; max-width: 500px; opacity: 0.15; }
     }
 
+    /* Hüpfender Frosch – auch auf Smartphone */
     .hopping-frog {
       position: fixed;
       bottom: 20%;
@@ -129,7 +158,11 @@
       filter: brightness(1.2) contrast(1.3) drop-shadow(0 0 12px rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(255,255,255,0.6));
     }
     @media (max-width: 480px) {
-      .hopping-frog { width: 50px; height: 50px; bottom: 15%; }
+      .hopping-frog {
+        width: 50px;
+        height: 50px;
+        bottom: 15%;
+      }
     }
 
     @keyframes hopAcross { 0% { left: -60px; } 100% { left: 100vw; } }
@@ -237,6 +270,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
+    /* Teilen-Buttons */
     .share-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -255,6 +289,7 @@
     }
     .share-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
+    /* WhatsApp-Button */
     .whatsapp-btn {
       display: inline-flex;
       align-items: center;
@@ -512,26 +547,12 @@
   </p>
 
   <!-- SAUBERER WHATSAPP-BUTTON -->
-  <div style="text-align:center; margin:2rem 0;">
+  <div style="text-align:center; margin:2.5rem 0;">
     <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..."
        target="_blank" 
        rel="noopener noreferrer"
        class="whatsapp-btn">
       <span>💬</span> WhatsApp schreiben
-    </a>
-  </div>
-
-  <!-- Google Maps Button -->
-  <div style="text-align:center; margin:1.5rem 0;">
-    <a href="https://maps.app.goo.gl/cZ4GgStNgvG2soD6A" target="_blank" rel="noopener noreferrer" class="btn" style="background:#4285F4; color:white;">
-      Auf Google Maps anzeigen
-    </a>
-  </div>
-
-  <!-- Buchungsportal-Link -->
-  <div style="text-align:center; margin:1.5rem 0;">
-    <a href="https://www.ferienhausmiete.de/4676579.htm" target="_blank" rel="noopener noreferrer" class="btn" style="background:#e67e22; color:white;">
-      Direkt online buchen bei Ferienhausmiete.de
     </a>
   </div>
 
@@ -560,9 +581,6 @@
       <p>
         <strong>Ferienwohnung am Froschteich</strong><br>
         Dorfstr. 8, 18556 Putgarten<br>
-        <a href="https://maps.app.goo.gl/cZ4GgStNgvG2soD6A" target="_blank" rel="noopener noreferrer" style="color:#f4a261;">
-          Auf Google Maps anzeigen →
-        </a><br>
         Telefon: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a><br>
         E-Mail: <a href="mailto:abshagen@gmx.de" style="color:#f4a261;">abshagen@gmx.de</a>
       </p>
