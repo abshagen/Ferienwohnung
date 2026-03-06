@@ -59,6 +59,8 @@
       --light: #f8f9fa;
       --dark: #212529;
       --gray: #6c757d;
+      --table-even: #f8f9fa;
+      --table-border: #dee2e6;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -133,35 +135,7 @@
       max-width: 900px; font-size: 1.1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
 
-    /* Gastgeber */
-    #gastgeber {
-      text-align: center;
-      padding: 5rem 1.5rem 3rem;
-      background: #fff;
-    }
-    .host-photo {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 6px solid var(--accent);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-      margin-bottom: 1.5rem;
-    }
-    .host-name {
-      font-size: 2rem;
-      margin-bottom: 0.8rem;
-      color: var(--primary-dark);
-    }
-    .host-text {
-      font-size: 1.1rem;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* Preistabelle */
+    /* Ordentliche Preistabelle */
     .price-table {
       width: 100%;
       max-width: 700px;
@@ -230,7 +204,7 @@
       border: none;
     }
 
-    /* Galerie – hier ist sie! */
+    /* Galerie und andere Styles */
     #galerie {
       background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
       padding: 7rem 1.5rem 5rem;
@@ -356,19 +330,100 @@
   </div>
 </section>
 
-<!-- Gastgeber -->
-<section id="gastgeber">
-  <h2>Ihre Gastgeber</h2>
-  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Steffi und Joerg2.png" 
-       alt="Stefanie und Jörg Abshagen" 
-       class="host-photo">
-  <h3 class="host-name">Stefanie & Jörg Abshagen</h3>
-  <p class="host-text">
-    Wir freuen uns sehr, Sie in unserem kleinen Paradies am Froschteich begrüßen zu dürfen! <br><br>
-    Mit viel Herzblut haben wir die Wohnung liebevoll eingerichtet und möchten, dass Sie sich bei uns rundum wohlfühlen. <br>
-    Wir kennen Rügen in- und auswendig und geben Ihnen gerne persönliche Tipps für schöne Strände, Ausflüge und versteckte Ecken. <br>
-    Bei uns sind Sie nicht nur Gast – Sie sind herzlich willkommen!
+<section id="galerie">
+  <h2>Unsere Ferienwohnung in Bildern</h2>
+  <p class="gallery-intro">
+    Entdecken Sie die gemütliche Atmosphäre, die idyllische Teichlage und die liebevollen Details.<br>
+    Klicken Sie auf ein Bild für die Großansicht.
   </p>
+
+  <div class="gallery-grid">
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/VitWasser.jpg" alt="Teichblick mit Wasserpflanzen" onclick="this.requestFullscreen()">
+      <figcaption>Idyllischer Froschteich direkt vor der Tür</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad.jpg" alt="Helles Badezimmer" onclick="this.requestFullscreen()">
+      <figcaption>Tageslichtbad mit Badewanne</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad2.jpg" alt="Badezimmer Detail" onclick="this.requestFullscreen()">
+      <figcaption>Badezimmer-Detail</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/esszimmer.jpg" alt="Essbereich" onclick="this.requestFullscreen()">
+      <figcaption>Gemütlicher Essbereich</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten.jpg" alt="Garten" onclick="this.requestFullscreen()">
+      <figcaption>Garten zum Entspannen</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten2.jpg" alt="Garten bei Tageslicht" onclick="this.requestFullscreen()">
+      <figcaption>Garten bei Tageslicht</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" alt="Haus von außen" onclick="this.requestFullscreen()">
+      <figcaption>Das Haus von außen</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kinderzimmer.jpg" alt="Kinderzimmer" onclick="this.requestFullscreen()">
+      <figcaption>Kinderzimmer / Zusatzschlafplatz</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kueche.jpg" alt="Küche" onclick="this.requestFullscreen()">
+      <figcaption>Voll ausgestattete Küche</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer.jpg" alt="Hauptschlafzimmer" onclick="this.requestFullscreen()">
+      <figcaption>Hauptschlafzimmer</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer2.jpg" alt="Schlafzimmer Detail" onclick="this.requestFullscreen()">
+      <figcaption>Schlafzimmer-Detail</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenaufgang.jpg" alt="Sonnenaufgang" onclick="this.requestFullscreen()">
+      <figcaption>Romantischer Sonnenaufgang am Teich</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenuntergang.jpg" alt="Sonnenuntergang" onclick="this.requestFullscreen()">
+      <figcaption>Wunderschöner Sonnenuntergang</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer.jpg" alt="Wohnbereich" onclick="this.requestFullscreen()">
+      <figcaption>Gemütlicher Wohnbereich</figcaption>
+    </figure>
+
+    <figure>
+      <img loading="lazy" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer2.jpg" alt="Wohnzimmer mit Ausblick" onclick="this.requestFullscreen()">
+      <figcaption>Wohnzimmer mit Ausblick</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<section id="verfuegbarkeit" style="background:#f8f9fa;">
+  <h2>Verfügbarkeit prüfen</h2>
+  <div class="calendar-container" style="max-width:900px; margin:2rem auto;">
+    <iframe src="https://api.belegungskalender-kostenlos.de/kalender.php?kid=58900" title="Belegungskalender Ferienwohnung am Froschteich"></iframe>
+  </div>
+  <div style="text-align:center;">
+    <a href="#kontakt" class="btn">Unverbindlich anfragen</a>
+  </div>
 </section>
 
 <section id="preise">
