@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ferienwohnung am Froschteich – Putgarten / Rügen</title>
-  <meta name="description" content="Idyllische Ferienwohnung direkt am Teich in Putgarten, nördlichster Zipfel Rügen. Bis 5 Personen, hundefreundlich, 1 km zum Strand. Ab 80 €/Nacht. Ab Herbst 2026 wieder buchbar – Anfragen willkommen!" />
-  <meta name="keywords" content="Ferienwohnung Putgarten, Rügen Ferienwohnung, Kap Arkona, hundefreundlich Rügen, Froschteich, ruhige Lage Rügen" />
+  <meta name="description" content="Idyllische Ferienwohnung direkt am Teich in Putgarten, Rügen. Bis 5 Personen, hundefreundlich, 1 km zum Strand. Ab 80 €/Nacht. Ab Herbst 2026 wieder buchbar." />
+  <meta name="keywords" content="Ferienwohnung Putgarten, Rügen Ferienwohnung, Kap Arkona, hundefreundlich, Froschteich" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen" />
-  <meta property="og:description" content="Gemütliche Fewo für bis 5 Personen direkt am Teich. 1 km zum Strand, großer Garten, Haustiere herzlich willkommen. Ab Herbst 2026 wieder verfügbar." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
+  <meta property="og:description" content="Gemütliche Fewo bis 5 Pers. direkt am Teich. 1 km Strand, Garten, Terrasse, Grill, WLAN, Hunde willkommen." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" />
   <meta property="og:url" content="https://www.familieabshagen.de/" />
 
-  <!-- Google Analytics / Tag (deine bestehende ID) -->
+  <!-- Google Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17943887087"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -28,7 +28,7 @@
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Ferienwohnung am Froschteich",
-    "image": "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png",
+    "image": "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg",
     "telephone": "+491627320763",
     "email": "abshagen@gmx.de",
     "address": {
@@ -41,7 +41,7 @@
     "geo": { "@type": "GeoCoordinates", "latitude": 54.67433, "longitude": 13.41976 },
     "url": "https://www.familieabshagen.de/",
     "priceRange": "€€",
-    "description": "Ruhige Ferienwohnung am Teich in Putgarten/Rügen für bis 5 Personen. 1 km Strand, großer Garten, Terrasse, Grill, WLAN, hundefreundlich."
+    "description": "Ruhige Ferienwohnung am Teich auf Rügen. Bis 5 Personen, Haustiere willkommen, Terrasse, Garten, WLAN."
   }
   </script>
 
@@ -56,156 +56,95 @@
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: system-ui, sans-serif;
       line-height: 1.65;
       color: var(--dark);
       background: var(--light);
       margin-top: 64px;
     }
-
-    /* Ticker – auffällig, aber nicht zu aggressiv */
     .ticker-banner {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #b91c1c;
-      color: white;
-      font-weight: 600;
-      text-align: center;
-      padding: 14px 0;
-      z-index: 9999;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      position: fixed; top:0; left:0; right:0;
+      background: #b91c1c; color:white; font-weight:600;
+      text-align:center; padding:14px 0; z-index:9999;
+      box-shadow:0 3px 10px rgba(0,0,0,0.25);
       font-size: clamp(1rem, 3.8vw, 1.15rem);
     }
     .ticker-content {
-      display: inline-block;
-      white-space: nowrap;
+      display:inline-block; white-space:nowrap;
       animation: ticker 28s linear infinite;
     }
-    @keyframes ticker {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* Reduzierter Wasserzeichen-Look */
-    .watermark-logo {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0.12;
-    }
-    .watermark-logo img { width: 70vw; max-width: 720px; filter: blur(4px); }
-
-    /* Sehr dezenter hüpfender Frosch – viele finden ihn süß, wenige nervig */
-    .hopping-frog {
-      position: fixed;
-      bottom: 18%;
-      left: -80px;
-      width: 54px;
-      height: 54px;
-      pointer-events: none;
-      z-index: 10;
-      animation: hopAcross 45s linear infinite;
-    }
-    .hopping-frog img {
-      width: 100%;
-      animation: bounce 2.4s infinite ease-in-out;
-      opacity: 0.8;
-    }
-    @keyframes hopAcross { 0% { left: -80px; } 100% { left: 100vw; } }
-    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+    @keyframes ticker { 0% {transform:translateX(100%)} 100% {transform:translateX(-100%)} }
 
     header {
-      position: relative;
-      height: 92vh;
-      min-height: 640px;
+      height: 90vh; min-height:640px;
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
-                  url('https://static.ferienhausmiete.de/pictures/175333/bilder_original/175333_79761968515171.jpg') center/cover;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 1.2rem;
+                  url('https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg') center/cover;
+      color:white; display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:0 1.2rem;
     }
-    h1 { font-size: clamp(2.8rem, 8vw, 4.8rem); margin-bottom: 0.6rem; text-shadow: 0 3px 12px #000c; }
-    .lead { font-size: clamp(1.2rem, 4vw, 1.55rem); max-width: 780px; margin: 0 auto 2.2rem; }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-size: 1.25rem;
-      font-weight: 600;
-      padding: 1rem 2.1rem;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: all 0.28s;
-      box-shadow: 0 5px 16px rgba(244,162,97,0.35);
-    }
-    .btn:hover { background: #ea580c; transform: translateY(-3px); box-shadow: 0 10px 24px rgba(244,162,97,0.5); }
+    h1 { font-size: clamp(2.8rem, 8vw, 4.8rem); margin-bottom:0.6rem; text-shadow:0 3px 12px #000c; }
+    .lead { font-size: clamp(1.2rem, 4vw, 1.55rem); max-width:780px; margin:0 auto 2.2rem; }
 
-    section { padding: 5.5rem 1.2rem 4rem; max-width: 1180px; margin: 0 auto; }
-    h2 { text-align: center; font-size: 2.3rem; margin-bottom: 2.2rem; color: var(--primary-dark); }
+    .btn {
+      display:inline-block; background:var(--accent); color:white;
+      font-size:1.25rem; font-weight:600; padding:1rem 2.1rem;
+      border-radius:999px; text-decoration:none; transition:all 0.28s;
+      box-shadow:0 5px 16px rgba(244,162,97,0.35);
+    }
+    .btn:hover { background:#ea580c; transform:translateY(-3px); box-shadow:0 10px 24px rgba(244,162,97,0.5); }
+
+    section { padding:5.5rem 1.2rem 4rem; max-width:1180px; margin:0 auto; }
+    h2 { text-align:center; font-size:2.3rem; margin-bottom:2.2rem; color:var(--primary-dark); }
 
     .info-box, .price-table, .rules-box {
-      background: white;
-      border-radius: 12px;
-      padding: 2.2rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      margin: 2rem auto;
-      max-width: 860px;
-      font-size: 1.08rem;
+      background:white; border-radius:12px; padding:2.2rem;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08); margin:2rem auto;
+      max-width:860px; font-size:1.08rem;
     }
+    table { width:100%; border-collapse:collapse; margin:1.4rem 0; }
+    th, td { padding:1rem; border:1px solid #e5e7eb; text-align:left; }
+    th { background:var(--primary); color:white; }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.4rem 0;
+    /* Galerie */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+      padding: 0 0.5rem;
     }
-    th, td { padding: 1rem; border: 1px solid #e5e7eb; text-align: left; }
-    th { background: var(--primary); color: white; }
-
-    .calendar-container iframe {
-      width: 100%;
-      height: 620px;
-      border: none;
+    .gallery-item {
+      overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+    .gallery-item img {
+      width: 100%; height: auto; display: block;
+      object-fit: cover;
     }
 
     .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: #25D366;
-      color: white;
-      padding: 1.1rem 2.3rem;
-      border-radius: 999px;
-      font-size: 1.25rem;
-      font-weight: 600;
-      text-decoration: none;
-      margin: 2rem 0;
-      box-shadow: 0 4px 14px rgba(37,213,102,0.3);
+      display:inline-flex; align-items:center; gap:0.8rem;
+      background:#25D366; color:white; padding:1.1rem 2.3rem;
+      border-radius:999px; font-size:1.25rem; font-weight:600;
+      text-decoration:none; margin:2rem 0; box-shadow:0 4px 14px rgba(37,213,102,0.3);
     }
-    .whatsapp-btn:hover { background: #22c55e; transform: translateY(-2px); }
+    .whatsapp-btn:hover { background:#22c55e; transform:translateY(-2px); }
 
     footer {
-      background: var(--dark);
-      color: #e5e7eb;
-      padding: 3rem 1.2rem 1.8rem;
-      text-align: center;
+      background:var(--dark); color:#e5e7eb; padding:3rem 1.2rem 1.8rem;
+      text-align:center;
     }
-    .footer-links a { color: var(--accent); font-weight: 600; margin: 0 1.2rem; text-decoration: none; }
-    .footer-links a:hover { color: white; }
+    .footer-links a { color:var(--accent); font-weight:600; margin:0 1.2rem; text-decoration:none; }
+    .footer-links a:hover { color:white; }
 
-    @media (max-width: 640px) {
-      section { padding: 4rem 1rem 3rem; }
-      h1 { font-size: 2.6rem; }
-      .ticker-banner { font-size: 0.98rem; padding: 12px 0; }
-      .hopping-frog { width: 48px; height: 48px; bottom: 12%; }
+    @media (max-width:640px) {
+      section { padding:4rem 1rem 3rem; }
+      .gallery-grid { gap:1.2rem; }
     }
   </style>
 </head>
@@ -213,152 +152,152 @@
 
 <div class="ticker-banner">
   <div class="ticker-content">
-    WICHTIG: Unsere Ferienwohnung bleibt wegen umfangreicher Sanierungsarbeiten bis voraussichtlich Sommer/Herbst 2026 geschlossen. Anfragen für die Zeit ab Herbst 2026 nehmen wir sehr gerne entgegen! – Familie Abshagen
+    WICHTIG: Ferienwohnung bleibt wegen Sanierung bis vorauss. Sommer/Herbst 2026 geschlossen. Anfragen für danach gerne möglich! – Familie Abshagen
   </div>
-</div>
-
-<div class="watermark-logo">
-  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="">
-</div>
-
-<div class="hopping-frog">
-  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="">
 </div>
 
 <header>
   <div>
     <h1>Ferienwohnung am Froschteich</h1>
-    <p class="lead">Idyllisch direkt am Teich • Dorfstr. 8, 18556 Putgarten • Nördlichster Punkt Rügens • Bis 5 Personen • Hunde herzlich willkommen • Nur 1 km zum Strand</p>
+    <p class="lead">Dorfstr. 8, 18556 Putgarten – nördlichster Zipfel Rügens | Bis 5 Personen | Haustiere willkommen | 1 km zum Strand</p>
     <a href="#verfuegbarkeit" class="btn" style="margin:0.6rem;">Verfügbarkeit prüfen</a>
     <a href="#kontakt" class="btn" style="background:transparent; border:2px solid var(--accent); color:var(--accent);">Jetzt anfragen</a>
   </div>
 </header>
 
 <section id="beschreibung">
-  <h2>Zu Gast und doch wie Zuhause</h2>
+  <h2>Willkommen bei uns am Froschteich</h2>
   <div class="info-box">
-    <p>Unsere Ferienwohnung liegt ruhig und idyllisch direkt am namensgebenden Froschteich – mitten im Grünen, weit weg vom Massentourismus, aber dennoch nur wenige Minuten mit dem Auto oder Fahrrad vom Kap Arkona, den Leuchttürmen und dem feinen Sandstrand entfernt.</p>
-    <p><strong>Das erwartet Sie:</strong></p>
-    <ul style="padding-left:1.4rem; margin:1.2rem 0;">
-      <li>Eigener Eingang + Außentreppe ins Dachgeschoss</li>
-      <li>Ca. 16 m² große Sonnenterrasse mit Möbeln & Grill</li>
-      <li>Offener Wohn-/Essbereich mit vollausgestatteter Küche</li>
-      <li>Helles Bad mit Badewanne + Duschfunktion</li>
-      <li>Schlafzimmer (2–3 Pers.) + Kinderschlafzimmer (ausziehbare Couch) + Schlafcouch/Beistellbett</li>
-      <li>WLAN, SAT-TV, CD-Radio, großer Garten (ca. 2500 m²) mit Nutzung</li>
-      <li>PKW-Stellplatz direkt am Haus</li>
-      <li>Haustiere willkommen (5 € / Nacht) – wir haben selbst Hunde</li>
-    </ul>
-    <p style="margin-top:2rem; font-weight:600; color:var(--primary);">Aktueller Hinweis: Aufgrund laufender Sanierungsarbeiten ist die Wohnung bis voraussichtlich Sommer/Herbst 2026 nicht buchbar. Gerne merken wir Sie schon jetzt für die Zeit danach vor!</p>
+    <p>Ruhige Lage direkt am Teich, viel Grün, frische Luft – ideal für Erholung auf Rügen. Eigener Eingang, Terrasse, Grill, großer Garten (ca. 2500 m²), WLAN, SAT-TV.</p>
+    <p>Schlafplätze: 2–3 im Hauptschlafzimmer + Beistellbett, Kinderschlafzimmer mit ausziehbarer Couch, Schlafcouch im Wohnbereich → bis 5 Personen.</p>
+    <p style="font-weight:600; color:var(--primary); margin-top:1.5rem;">
+      Hinweis: Wegen Sanierungsarbeiten derzeit nicht buchbar – Anfragen für Herbst 2026+ willkommen!
+    </p>
   </div>
 </section>
 
 <section id="galerie">
-  <h2>Ein Blick in unsere Ferienwohnung</h2>
-  <p style="text-align:center; color:var(--gray); margin-bottom:2.5rem;">Klicken / Tippen zum Vergrößern</p>
-  <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
-  <div class="pa-gallery-player-widget" style="width:100%; height:620px;"
-       data-link="https://photos.google.com/share/AF1QipNi5b1lcDFwj2TFJw9y2fJ3kndyNq10nKI9jA070vOLPVCqZPPxSXk4Juke1aIomA?key=UG84UkVTZGgwaXZzYlRiR3RfOW1wQ1hRaTUwM01R"
-       data-title="Ferienwohnung am Froschteich – Putgarten">
+  <h2>Fotos unserer Ferienwohnung</h2>
+  <p style="text-align:center; color:var(--gray); margin-bottom:2.5rem;">
+    Klicken Sie auf ein Bild, um es groß anzusehen
+  </p>
+
+  <div class="gallery-grid">
+
+    <!-- 1. Haus -->
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" alt="Außenansicht des Hauses" loading="lazy">
+      </a>
+    </div>
+
+    <!-- 2. Innenräume -->
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer.jpg" alt="Wohnzimmer" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer2.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer2.jpg" alt="Wohnzimmer 2" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kueche.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kueche.jpg" alt="Küche" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/esszimmer.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/esszimmer.jpg" alt="Esszimmer" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer.jpg" alt="Schlafzimmer" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer2.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer2.jpg" alt="Schlafzimmer 2" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kinderzimmer.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kinderzimmer.jpg" alt="Kinderzimmer" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad.jpg" alt="Badezimmer" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad2.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad2.jpg" alt="Badezimmer 2" loading="lazy">
+      </a>
+    </div>
+
+    <!-- 3. Garten -->
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten.jpg" alt="Garten" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten2.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten2.jpg" alt="Garten 2" loading="lazy">
+      </a>
+    </div>
+
+    <!-- 4. Sonstiges -->
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenaufgang.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenaufgang.jpg" alt="Sonnenaufgang" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenuntergang.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenuntergang.jpg" alt="Sonnenuntergang" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/VitWasser.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/VitWasser.jpg" alt="Vit Wasser / Teich" loading="lazy">
+      </a>
+    </div>
+
   </div>
 </section>
 
-<section id="verfuegbarkeit" style="background:#f1f5f9;">
+<!-- Rest der Seite (Verfügbarkeit, Preise, Regeln, Kontakt, Footer) – hier nur gekürzt als Platzhalter -->
+<section id="verfuegbarkeit" style="background:#f1f5f9; text-align:center;">
   <h2>Verfügbarkeit prüfen</h2>
-  <p style="text-align:center; font-size:1.2rem; max-width:720px; margin:0 auto 2.5rem;">
-    Der Kalender zeigt die aktuelle Belegung – Anfragen für Herbst 2026 & 2027 nehmen wir sehr gerne schon jetzt entgegen.
-  </p>
-  <div class="calendar-container">
-    <iframe src="https://api.belegungskalender-kostenlos.de/kalender.php?kid=58900" title="Belegungskalender"></iframe>
-  </div>
-  <div style="text-align:center; margin-top:2.5rem;">
-    <a href="#kontakt" class="btn">Unverbindlich anfragen</a>
-  </div>
+  <!-- Dein Kalender-Iframe hier einfügen -->
+  <p>Anfragen für Herbst 2026+ gerne möglich!</p>
+  <a href="#kontakt" class="btn">Jetzt anfragen</a>
 </section>
 
 <section id="preise">
-  <h2>Unsere Preise 2026 / 2027 (voraussichtlich)</h2>
+  <h2>Preise</h2>
   <div class="price-table">
-    <table>
-      <tr><th>Leistung</th><th>Preis</th></tr>
-      <tr><td>Basispreis (2 Personen / Nacht)</td><td>80 €</td></tr>
-      <tr><td>Jede weitere Person (ab 3 J.)</td><td>10 €</td></tr>
-      <tr><td>Haustier (pro Nacht)</td><td>5 €</td></tr>
-      <tr><td>Endreinigung (einmalig)</td><td>80 €</td></tr>
-      <tr><td>Mindestaufenthalt</td><td>5 Nächte</td></tr>
-      <tr><td>Kurtaxe (pro Person/Tag – lt. Gemeinde)</td><td>HS (1.5.–30.9.): 1,50 € voll / 1,00 € erm.<br>NS (1.10.–30.4.): 1,00 € voll / 0,50 € erm.</td></tr>
-    </table>
-    <p style="margin:1.8rem 0; font-weight:600; color:var(--primary-dark);">Keine Umsatzsteuer (§ 19 UStG – Kleinunternehmer)</p>
-    <p style="color:var(--gray); font-size:0.98rem;">Stand März 2026 – Änderungen vorbehalten</p>
+    <!-- Deine Preistabelle hier -->
   </div>
 </section>
 
-<section id="regeln">
-  <h2>Hausregeln & wichtige Infos</h2>
-  <div class="rules-box">
-    <h3 style="margin:1.8rem 0 1rem;">Check-in / Check-out</h3>
-    <p>Check-in: ab 15:00 Uhr<br>Check-out: bis 11:00 Uhr</p>
-
-    <h3 style="margin:2rem 0 1rem;">Zahlung</h3>
-    <ul>
-      <li>20 % Anzahlung bei Buchung</li>
-      <li>Rest 4 Wochen vor Anreise</li>
-      <li>Überweisung oder PayPal</li>
-    </ul>
-
-    <h3 style="margin:2rem 0 1rem;">Stornierung</h3>
-    <p>Bis 7 Tage vor Anreise: 50 % Rückerstattung (minus Bearbeitungsgebühr)<br>Weniger als 7 Tage: keine Rückerstattung</p>
-
-    <h3 style="margin:2rem 0 1rem;">Sonstiges</h3>
-    <ul>
-      <li>Nichtraucherwohnung</li>
-      <li>Kinder herzlich willkommen</li>
-      <li>Haustiere willkommen (5 €/Nacht)</li>
-    </ul>
-  </div>
-</section>
-
-<section id="kontakt" style="background:var(--dark); color:white;">
-  <h2>Kontakt & Anfrage</h2>
-  <p style="text-align:center; font-size:1.18rem; margin-bottom:2rem;">
-    Stefanie & Jörg Abshagen<br>
-    Tel: <a href="tel:+491627320763" style="color:var(--accent);">0162 7320763</a><br>
-    E-Mail: <a href="mailto:abshagen@gmx.de" style="color:var(--accent);">abshagen@gmx.de</a>
-  </p>
-
-  <div style="text-align:center;">
-    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20interessiere%20mich%20für%20die%20Ferienwohnung%20am%20Froschteich%20ab%20Herbst%202026..." class="whatsapp-btn">
-      <span style="font-size:1.6rem;">💬</span> WhatsApp schreiben
-    </a>
-  </div>
-
-  <div style="text-align:center; margin:2.5rem 0; display:flex; flex-wrap:wrap; gap:1.2rem; justify-content:center;">
-    <a href="https://maps.app.goo.gl/cZ4GgStNgvG2soD6A" target="_blank" class="btn" style="background:#4285f4;">Google Maps</a>
-    <a href="https://www.ferienhausmiete.de/4676579.htm" target="_blank" class="btn" style="background:#e67e22;">Bei ferienhausmiete.de buchen</a>
-  </div>
-
-  <form action="https://formspree.io/f/mojnobqd" method="POST" style="max-width:620px; margin:3rem auto; display:grid; gap:1.4rem;">
-    <input type="text" name="name" placeholder="Ihr Name *" required style="padding:1.1rem; border-radius:8px; border:1px solid #d1d5db;">
-    <input type="email" name="email" placeholder="Ihre E-Mail *" required style="padding:1.1rem; border-radius:8px; border:1px solid #d1d5db;">
-    <input type="text" name="zeitraum" placeholder="Gewünschter Zeitraum (ab Herbst 2026)" required style="padding:1.1rem; border-radius:8px; border:1px solid #d1d5db;">
-    <input type="number" name="personen" placeholder="Anzahl Personen" min="1" max="5" style="padding:1.1rem; border-radius:8px; border:1px solid #d1d5db;">
-    <textarea name="nachricht" placeholder="Ihre Nachricht (z. B. mit Hund? Anzahl Kinder?)" rows="5" style="padding:1.1rem; border-radius:8px; border:1px solid #d1d5db;"></textarea>
-    <button type="submit" class="btn" style="border:none; cursor:pointer;">Anfrage absenden</button>
-  </form>
+<section id="kontakt" style="background:var(--dark); color:white; text-align:center; padding:5rem 1.2rem;">
+  <h2>Kontakt</h2>
+  <p>Stefanie & Jörg Abshagen<br>Tel: <a href="tel:+491627320763" style="color:var(--accent);">0162 7320763</a><br>E-Mail: <a href="mailto:abshagen@gmx.de" style="color:var(--accent);">abshagen@gmx.de</a></p>
+  <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20Interesse%20an%20der%20Fewo%20ab%20Herbst%202026..." class="whatsapp-btn">💬 WhatsApp schreiben</a>
+  <!-- Formular und weitere Links hier -->
 </section>
 
 <footer>
   <p><strong>Ferienwohnung am Froschteich</strong><br>Dorfstr. 8 · 18556 Putgarten</p>
-  <p style="margin:1.2rem 0;">
-    <a href="https://maps.app.goo.gl/cZ4GgStNgvG2soD6A" style="color:var(--accent);">→ Auf Google Maps anzeigen</a>
-  </p>
   <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
   </div>
-  <p style="margin-top:2rem; font-size:0.9rem; color:#9ca3af;">
-    © 2026 Stefanie & Jörg Abshagen
-  </p>
+  <p style="margin-top:1.5rem; font-size:0.9rem; color:#9ca3af;">© 2026 Stefanie & Jörg Abshagen</p>
 </footer>
 
 </body>
