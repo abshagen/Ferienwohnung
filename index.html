@@ -139,20 +139,64 @@
     section { padding: clamp(3rem, 8vw, 5rem) 1.2rem 4rem; max-width: 1200px; margin: 0 auto; }
     h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); margin-bottom: 2rem; text-align: center; color: var(--primary-dark); }
 
-    .info-box, .rules-box, .price-table {
+    .info-box, .rules-box {
       background: #f0f8ff;
       border-radius: 12px;
       padding: clamp(1.4rem, 4vw, 2rem);
       margin: 1.5rem auto;
       max-width: 900px;
       font-size: clamp(1rem, 3.5vw, 1.1rem);
-      overflow-x: auto;
     }
 
-    table { min-width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-    th, td { padding: 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
-    th { background: var(--primary); color: white; }
+    /* Responsive Preistabelle */
+    .price-table-wrapper {
+      position: relative;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem auto;
+      max-width: 100%;
+    }
 
+    .price-table {
+      min-width: 100%;
+      width: max-content;
+    }
+
+    .price-table table {
+      min-width: 100%;
+      border-collapse: collapse;
+    }
+
+    .price-table th, .price-table td {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .price-table th { background: var(--primary); color: white; }
+
+    /* Hinweis "horizontal scrollen" auf sehr schmalen Screens */
+    .price-table-wrapper::after {
+      content: "→ horizontal scrollen";
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      pointer-events: none;
+      opacity: 0.8;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .price-table-wrapper::after { display: block; }
+    }
+
+    /* Gastgeber */
     #ueber-uns { background: #fff; padding: clamp(3rem, 8vw, 5rem) 1.2rem 4rem; }
     .gastgeber-container { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; max-width: 1100px; margin: 0 auto; justify-content: center; }
     .gastgeber-bild { flex: 0 0 220px; text-align: center; }
@@ -169,6 +213,7 @@
     .gastgeber-bild img:hover { transform: scale(1.08); }
     .gastgeber-text { flex: 1; min-width: 280px; font-size: clamp(1.05rem, 3.2vw, 1.15rem); line-height: 1.8; }
 
+    /* Galerie */
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; padding: 0 0.5rem; }
     .gallery-item {
       aspect-ratio: 4/3;
@@ -194,6 +239,7 @@
     .lightbox-content { max-width: 96%; max-height: 90vh; border-radius: 8px; }
     .close { position: absolute; top: 20px; right: 25px; color: white; font-size: 45px; cursor: pointer; }
 
+    /* Share-Buttons */
     .share-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -481,23 +527,25 @@
 
 <section id="preise">
   <h2>Preise & Kosten</h2>
-  <div class="price-table">
-    <table>
-      <tr><th>Beschreibung</th><th>Preis</th></tr>
-      <tr><td>Basispreis (2 Erwachsene / Nacht)</td><td>80 €</td></tr>
-      <tr><td>Aufschlag je weitere Person (Erwachsene oder Kind / Nacht)</td><td>10 €</td></tr>
-      <tr><td>Mindestaufenthalt</td><td>5 Nächte</td></tr>
-      <tr><td>Endreinigung (einmalig, zusätzlich zu zahlen)</td><td>80 €</td></tr>
-      <tr><td>Haustiere (pro Nacht)</td><td>5 €</td></tr>
-      <tr><td>Kurtaxe (pro Person/Tag – separat zu zahlen)</td><td>siehe Hausregeln</td></tr>
-    </table>
-    <p style="margin-top:1.8rem; font-size:1rem; font-weight:bold; color:var(--primary-dark);">
-      Keine Umsatzsteuer gemäß § 19 UStG (Kleinunternehmerregelung)
-    </p>
-    <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--gray);">
-      Alle Preise sind Endpreise (Bruttopreise), die der Gast zahlt. Keine versteckten Kosten.
-      Stand: März 2026 – Preise können saisonal variieren.
-    </p>
+  <div class="price-table-wrapper">
+    <div class="price-table">
+      <table>
+        <tr><th>Beschreibung</th><th>Preis</th></tr>
+        <tr><td>Basispreis (2 Erwachsene / Nacht)</td><td>80 €</td></tr>
+        <tr><td>Aufschlag je weitere Person (Erwachsene oder Kind / Nacht)</td><td>10 €</td></tr>
+        <tr><td>Mindestaufenthalt</td><td>5 Nächte</td></tr>
+        <tr><td>Endreinigung (einmalig, zusätzlich zu zahlen)</td><td>80 €</td></tr>
+        <tr><td>Haustiere (pro Nacht)</td><td>5 €</td></tr>
+        <tr><td>Kurtaxe (pro Person/Tag – separat zu zahlen)</td><td>siehe Hausregeln</td></tr>
+      </table>
+      <p style="margin-top:1.8rem; font-size:1rem; font-weight:bold; color:var(--primary-dark);">
+        Keine Umsatzsteuer gemäß § 19 UStG (Kleinunternehmerregelung)
+      </p>
+      <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--gray);">
+        Alle Preise sind Endpreise (Bruttopreise), die der Gast zahlt. Keine versteckten Kosten.
+        Stand: März 2026 – Preise können saisonal variieren.
+      </p>
+    </div>
   </div>
 </section>
 
