@@ -9,8 +9,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Stefanie & Jörg Abshagen" />
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
-
-  <!-- Open Graph – verbessert Vorschaubild in Google, Facebook, WhatsApp etc. -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen – hundefreundlich" />
   <meta property="og:description" content="Gemütliche Ferienwohnung am Froschteich für bis zu 5 Personen + Hund in Putgarten, Dorfstr. 8. Idyllisch gelegen, 1 km zum Strand, Haustiere willkommen." />
   <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" />
@@ -19,44 +18,19 @@
   <meta property="og:image:alt" content="Ferienwohnung am Froschteich – Außenansicht in Putgarten auf Rügen" />
   <meta property="og:url" content="https://www.familieabshagen.de/" />
   <meta property="og:type" content="website" />
-
   <!-- Twitter/X Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen – hundefreundlich" />
   <meta name="twitter:description" content="Hundefreundliche Ferienwohnung direkt am Teich, 1 km zum Strand, bis 5 Personen." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" />
 
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    "name": "Ferienwohnung am Froschteich",
-    "image": [
-      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg",
-      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten.jpg",
-      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer.jpg",
-      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenuntergang.jpg"
-    ],
-    "description": "Hundefreundliche Ferienwohnung in Putgarten auf Rügen, bis 5 Personen + Hund, 1 km zum Strand, ruhige Lage am Kap Arkona.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Dorfstr. 8",
-      "addressLocality": "Putgarten",
-      "postalCode": "18556",
-      "addressCountry": "DE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 54.674287,
-      "longitude": 13.419799
-    },
-    "telephone": "+491627320763",
-    "email": "abshagen@gmx.de",
-    "url": "https://www.familieabshagen.de/",
-    "priceRange": "€€",
-    "petsAllowed": true
-  }
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NY2870GSYK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NY2870GSYK', { 'anonymize_ip': true });
   </script>
 
   <!-- Favicon -->
@@ -293,12 +267,12 @@
       box-shadow: 0 10px 30px rgba(37,213,102,0.7);
     }
     .map-embed {
-      border:0; 
-      border-radius:12px; 
-      width:100%; 
-      max-width:900px; 
-      height:450px; 
-      margin:2rem auto; 
+      border:0;
+      border-radius:12px;
+      width:100%;
+      max-width:900px;
+      height:450px;
+      margin:2rem auto;
       display:block;
     }
     footer { background: var(--dark); color: white; padding: 2.5rem 1rem 1.5rem; text-align: center; }
@@ -370,7 +344,6 @@
 <div class="hopping-frog">
   <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="Hüpfender Frosch">
 </div>
-
 <header>
   <div class="hero-content">
     <h1>Ferienwohnung am Froschteich</h1>
@@ -379,7 +352,6 @@
     <a href="#kontakt" class="btn" style="background:#e67e22;">Jetzt direkt anfragen</a>
   </div>
 </header>
-
 <section id="beschreibung">
   <h2>Zu Gast und doch Zuhause!</h2>
   <div class="info-box">
@@ -390,7 +362,6 @@
     <p>Schlafmöglichkeiten: Zweibett-Schlafzimmer mit Beistellbett und Kleiderschrank, kleines Kinderschlafzimmer mit ausziehbarer Schlafcouch (ideal für 1 Person), Schlafcouch oder Beistellbett für die 5. Person im Wohnzimmer. Weitere Highlights: CD-Radio, Satelliten-TV, WLAN, Grillmöglichkeit und Gartennutzung auf ca. 2500 m². Haustiere sind willkommen – unser Gastgeber hat selbst Hunde.</p>
   </div>
 </section>
-
 <section id="hundewillkommen">
   <h2>Ferien mit Hund – willkommen in Putgarten am Kap Arkona</h2>
   <div class="info-box">
@@ -398,7 +369,6 @@
     <p>Willkommen sind Hunde aller Größen – wir freuen uns auf Sie und Ihren Begleiter!</p>
   </div>
 </section>
-
 <section id="ueber-uns">
   <h2>Über uns – Ihre Gastgeber</h2>
   <div class="gastgeber-container">
@@ -410,21 +380,20 @@
     </div>
   </div>
 </section>
-
 <section id="anfahrt" style="background:#f8f9fa; padding: clamp(3rem,8vw,5rem) 1.2rem;">
   <h2>So finden Sie uns</h2>
   <p style="text-align:center; font-size:1.15rem; margin-bottom:1.5rem;">
     Dorfstr. 8, 18556 Putgarten – direkt am nördlichsten Zipfel von Rügen
   </p>
-  <iframe 
+  <iframe
     class="map-embed"
     loading="lazy"
-    allowfullscreen 
+    allowfullscreen
     referrerpolicy="no-referrer-when-downgrade"
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2334.000!2d13.417624!3d54.674287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTTCsDQwJzI3LjQiTiAxM8KwMjUnMTEuMyJF!5e0!3m2!1sde!2sde!4v1741632000000!5m2!1sde!2sde">
   </iframe>
   <div style="text-align:center; margin:2rem 0;">
-    <p><strong>Geokoordinaten (für Navi):</strong> 
+    <p><strong>Geokoordinaten (für Navi):</strong>
       <a href="https://www.google.com/maps/search/?api=1&query=54.674287,13.419799" target="_blank" style="color:var(--primary); font-weight:bold;">
         54.674287, 13.419799
       </a>
@@ -442,15 +411,12 @@
     </p>
   </div>
 </section>
-
 <section id="galerie">
   <h2>Fotogalerie</h2>
   <p style="text-align:center; margin-bottom:2.5rem; color:var(--gray);">
     Klicken Sie auf ein Bild, um es größer anzusehen – alle Aufnahmen stammen direkt aus unserer hundefreundlichen Ferienwohnung & Umgebung in Putgarten
   </p>
   <div class="gallery-grid">
-
-    <!-- 1. Außen & Lage -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" alt="Ferienhaus Außenansicht – Ferienwohnung am Froschteich Putgarten">
     </a>
@@ -463,8 +429,6 @@
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/leuchtturm.JPG" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/leuchtturm.JPG" alt="Kap Arkona Leuchtturm in der Nähe – Ausflugsziel vom Froschteich">
     </a>
-
-    <!-- 2. Garten & Außenbereich -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten.jpg" alt="Großer Garten – viel Platz für Hunde – Ferienwohnung am Froschteich">
     </a>
@@ -474,8 +438,6 @@
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten3.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten3.jpg" alt="Weiterer Gartenbereich – Entspannung pur">
     </a>
-
-    <!-- 3. Tier-/Natur-Details -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/VitWasser.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/VitWasser.jpg" alt="Idyllischer Blick zum kleinen Froschteich – Ferienwohnung am Froschteich">
     </a>
@@ -488,8 +450,6 @@
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/blumen.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/blumen.jpg" alt="Blumen im Garten – farbenfrohe Details">
     </a>
-
-    <!-- 4. Wohn- & Essbereich -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer.jpg" alt="Gemütliches Wohnzimmer – Ferienwohnung am Froschteich">
     </a>
@@ -499,13 +459,9 @@
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/esszimmer.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/esszimmer.jpg" alt="Essbereich – Ferienwohnung am Froschteich">
     </a>
-
-    <!-- 5. Küche -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kueche.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kueche.jpg" alt="Voll ausgestattete Küche – Ferienwohnung am Froschteich">
     </a>
-
-    <!-- 6. Schlafzimmer & Kinderzimmer -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/schlafzimmer.jpg" alt="Schlafzimmer mit Doppelbett – Ferienwohnung am Froschteich">
     </a>
@@ -515,16 +471,12 @@
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kinderzimmer.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/kinderzimmer.jpg" alt="Kinderschlafzimmer mit Schlafcouch – Ferienwohnung am Froschteich">
     </a>
-
-    <!-- 7. Bad -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad.jpg" alt="Helles Badezimmer mit Badewanne – Ferienwohnung am Froschteich">
     </a>
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad2.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/bad2.jpg" alt="Badezimmer Detail – Ferienwohnung am Froschteich">
     </a>
-
-    <!-- 8. Strand & Umgebung -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/nordstrand1.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/nordstrand1.jpg" alt="Nordstrand in der Nähe – nur 1 km entfernt">
     </a>
@@ -534,8 +486,6 @@
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/feld.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/feld.jpg" alt="Felder und Natur rund um Putgarten">
     </a>
-
-    <!-- 9. Stimmungsvolle / besondere Bilder -->
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenaufgang.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenaufgang.jpg" alt="Sonnenaufgang in der Nähe – Natur pur bei der Ferienwohnung am Froschteich">
     </a>
@@ -551,14 +501,12 @@
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/hund2.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/hund2.jpg" alt="Weiteres Bild mit Hund – Entspannung für Mensch und Tier">
     </a>
-
   </div>
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox()">×</span>
     <img id="lightbox-img" class="lightbox-content" src="" alt="Vergrößertes Bild der Ferienwohnung am Froschteich">
   </div>
 </section>
-
 <section id="verfuegbarkeit" style="background:#f8f9fa; padding:4rem 1.5rem; text-align:center;">
   <h2>Verfügbarkeit prüfen</h2>
   <p style="font-size:1.2rem; margin-bottom:2rem;">
@@ -579,7 +527,6 @@
     Jetzt unverbindlich anfragen
   </a>
 </section>
-
 <section id="bewertungen" style="background:#f8f9fa; padding:4rem 1.5rem; text-align:center;">
   <h2>Was unsere Gäste sagen</h2>
   <p style="margin-bottom:2.5rem; font-size:1.2rem;">
@@ -594,7 +541,6 @@
     </a>
   </p>
 </section>
-
 <section id="preise">
   <h2>Preise & Kosten</h2>
   <div class="price-table">
@@ -616,7 +562,6 @@
     </p>
   </div>
 </section>
-
 <section id="regeln">
   <h2>Hausregeln & Wichtige Hinweise</h2>
   <div class="rules-box">
@@ -653,7 +598,6 @@
     </ul>
   </div>
 </section>
-
 <section id="kontakt" style="background:var(--dark); color:white; padding: 5rem 1.5rem 4rem; position: relative;">
   <h2>Kontakt & Buchungsanfrage</h2>
   <p style="text-align:center; margin-bottom:1.5rem; font-size:1.15rem;">
@@ -670,7 +614,7 @@
     </a>
   </p>
   <div style="text-align:center; margin:2.5rem 0;">
-    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20J%C3%B6rg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
       <span>💬</span> WhatsApp schreiben
     </a>
   </div>
@@ -695,11 +639,9 @@
     <button type="submit" class="btn" style="background:var(--accent); border:none; cursor:pointer; font-size:1.3rem;">Anfrage senden</button>
   </form>
 </section>
-
-<a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." class="sticky-whatsapp" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20J%C3%B6rg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." class="sticky-whatsapp" target="_blank" rel="noopener noreferrer">
   💬
 </a>
-
 <footer>
   <div class="footer-top">
     <div class="footer-center">
@@ -723,7 +665,6 @@
     © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich
   </div>
 </footer>
-
 <script>
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', e => {
