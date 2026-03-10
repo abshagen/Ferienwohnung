@@ -9,20 +9,17 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Stefanie & Jörg Abshagen" />
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
-
   <!-- Open Graph -->
   <meta property="og:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen – hundefreundlich" />
   <meta property="og:description" content="Gemütliche Ferienwohnung am Froschteich für bis zu 5 Personen + Hund in Putgarten, Dorfstr. 8. Idyllisch gelegen, 1 km zum Strand, Haustiere willkommen." />
   <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
   <meta property="og:url" content="https://www.familieabshagen.de/" />
   <meta property="og:type" content="website" />
-
   <!-- Favicon & Apple Touch -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
-
   <style>
     :root {
       --primary: #1a5c8c;
@@ -32,11 +29,8 @@
       --dark: #212529;
       --gray: #6c757d;
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: system-ui, -apple-system, sans-serif;
       line-height: 1.65;
@@ -45,7 +39,6 @@
       min-height: 100vh;
       margin-top: 50px;
     }
-
     .ticker-banner {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -65,7 +58,6 @@
       animation: ticker 30s linear infinite;
     }
     @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
     .watermark-logo {
       position: fixed;
       inset: 0;
@@ -82,7 +74,6 @@
       opacity: 0.18;
       filter: blur(6px);
     }
-
     .hopping-frog {
       position: fixed;
       bottom: 15%;
@@ -100,7 +91,6 @@
     }
     @keyframes hopAcross { 0% { left: -60px; } 100% { left: 100vw; } }
     @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
     header {
       min-height: 70vh;
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
@@ -114,7 +104,6 @@
     }
     h1 { font-size: clamp(2.1rem, 8vw, 4.2rem); margin-bottom: 1rem; text-shadow: 0 3px 10px rgba(0,0,0,0.7); }
     .lead { font-size: clamp(1.1rem, 4vw, 1.35rem); margin-bottom: 2rem; max-width: 90%; }
-
     .btn {
       display: inline-block;
       background: var(--accent);
@@ -135,10 +124,8 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(244,162,97,0.55);
     }
-
     section { padding: clamp(3rem, 8vw, 5rem) 1.2rem 4rem; max-width: 1200px; margin: 0 auto; }
     h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); margin-bottom: 2rem; text-align: center; color: var(--primary-dark); }
-
     .info-box, .rules-box, .price-table {
       background: #f0f8ff;
       border-radius: 12px;
@@ -148,11 +135,9 @@
       font-size: clamp(1rem, 3.5vw, 1.1rem);
       overflow-x: auto;
     }
-
     table { min-width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
     th, td { padding: 1rem; border: 1px solid #ddd; text-align: left; white-space: nowrap; }
     th { background: var(--primary); color: white; }
-
     #ueber-uns { background: #fff; padding: clamp(3rem, 8vw, 5rem) 1.2rem 4rem; }
     .gastgeber-container { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; max-width: 1100px; margin: 0 auto; justify-content: center; }
     .gastgeber-bild { flex: 0 0 220px; text-align: center; }
@@ -168,7 +153,6 @@
     }
     .gastgeber-bild img:hover { transform: scale(1.08); }
     .gastgeber-text { flex: 1; min-width: 280px; font-size: clamp(1.05rem, 3.2vw, 1.15rem); line-height: 1.8; }
-
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; padding: 0 0.5rem; }
     .gallery-item {
       aspect-ratio: 4/3;
@@ -189,11 +173,9 @@
       transition: transform 0.4s ease;
     }
     .gallery-item:hover img { transform: scale(1.12); }
-
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; z-index: 9999; }
     .lightbox-content { max-width: 96%; max-height: 90vh; border-radius: 8px; }
     .close { position: absolute; top: 20px; right: 25px; color: white; font-size: 45px; cursor: pointer; }
-
     .share-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -222,7 +204,6 @@
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(26,92,140,0.4);
     }
-
     .whatsapp-btn {
       display: inline-flex;
       align-items: center;
@@ -243,7 +224,6 @@
       box-shadow: 0 10px 25px rgba(37,213,102,0.5);
     }
     .whatsapp-btn span { font-size: 1.8rem; }
-
     .sticky-whatsapp {
       position: fixed;
       bottom: 25px;
@@ -266,7 +246,15 @@
       transform: scale(1.15);
       box-shadow: 0 10px 30px rgba(37,213,102,0.7);
     }
-
+    .map-embed {
+      border:0; 
+      border-radius:12px; 
+      width:100%; 
+      max-width:900px; 
+      height:450px; 
+      margin:2rem auto; 
+      display:block;
+    }
     footer { background: var(--dark); color: white; padding: 2.5rem 1rem 1.5rem; text-align: center; }
     .footer-top { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1200px; margin: 0 auto 1rem; }
     .footer-center { font-size: 1rem; line-height: 1.6; }
@@ -299,7 +287,6 @@
       padding-top: 1.2rem;
       margin-top: 1.5rem;
     }
-
     @media (min-width: 480px) {
       body { margin-top: 60px; }
       .ticker-banner { padding: 10px 0; font-size: 1rem; }
@@ -307,7 +294,6 @@
       .gastgeber-bild { flex: 0 0 240px; }
       .gastgeber-bild img { width: 240px; height: 240px; }
     }
-
     @media (min-width: 768px) {
       header { min-height: 80vh; padding: 6rem 2rem; }
       .lead { max-width: 70%; }
@@ -318,7 +304,6 @@
       .footer-top { grid-template-columns: 1fr auto 1fr; }
       .footer-links { flex-direction: row; gap: 2rem; }
     }
-
     @media (min-width: 1024px) {
       .watermark-logo img { width: 60vw; max-width: 800px; }
       .hopping-frog { width: 70px; height: 70px; bottom: 20%; }
@@ -328,17 +313,14 @@
   </style>
 </head>
 <body>
-
 <div class="ticker-banner">
   <div class="ticker-content">
     Leider bleibt unsere Ferienwohnung in der ersten Jahreshälfte 2026 aufgrund von Sanierungsarbeiten geschlossen. Anfragen darüber hinaus nehmen wir gerne entgegen. Eure Familie Abshagen.
   </div>
 </div>
-
 <div class="watermark-logo">
   <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="">
 </div>
-
 <div class="hopping-frog">
   <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="Hüpfender Frosch">
 </div>
@@ -383,12 +365,43 @@
   </div>
 </section>
 
+<section id="anfahrt" style="background:#f8f9fa; padding: clamp(3rem,8vw,5rem) 1.2rem;">
+  <h2>So finden Sie uns</h2>
+  <p style="text-align:center; font-size:1.15rem; margin-bottom:1.5rem;">
+    Dorfstr. 8, 18556 Putgarten – direkt am nördlichsten Zipfel von Rügen
+  </p>
+  <iframe 
+    class="map-embed"
+    loading="lazy"
+    allowfullscreen 
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2334.000!2d13.417624!3d54.674287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTTCsDQwJzI3LjQiTiAxM8KwMjUnMTEuMyJF!5e0!3m2!1sde!2sde!4v1741632000000!5m2!1sde!2sde">
+  </iframe>
+  <div style="text-align:center; margin:2rem 0;">
+    <p><strong>Geokoordinaten (für Navi):</strong> 
+      <a href="https://www.google.com/maps/search/?api=1&query=54.674287,13.419799" target="_blank" style="color:var(--primary); font-weight:bold;">
+        54.674287, 13.419799
+      </a>
+    </p>
+    <p style="margin:1.5rem 0;">
+      <a href="https://maps.app.goo.gl/EgHTGBViEgAWKRc4A" target="_blank" rel="noopener noreferrer" class="btn" style="background:#4285F4;">
+        → Auf Google Maps öffnen & Route planen
+      </a>
+    </p>
+    <p style="font-size:1.1rem; margin-top:2rem;">
+      Mehr Details & Fotos auch hier:<br>
+      <a href="https://www.ferienhausmiete.de/4676579.htm" target="_blank" rel="noopener noreferrer" style="color:var(--accent); font-weight:bold; text-decoration:underline;">
+        → Unsere Anzeige auf ferienhausmiete.de
+      </a>
+    </p>
+  </div>
+</section>
+
 <section id="galerie">
   <h2>Fotogalerie</h2>
   <p style="text-align:center; margin-bottom:2.5rem; color:var(--gray);">
     Klicken Sie auf ein Bild, um es größer anzusehen – alle Aufnahmen stammen direkt aus unserer hundefreundlichen Ferienwohnung & Umgebung in Putgarten
   </p>
-
   <div class="gallery-grid">
     <a href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/VitWasser.jpg" class="gallery-item">
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/VitWasser.jpg" alt="Idyllischer Blick zum kleinen Froschteich – Ferienwohnung am Froschteich">
@@ -436,7 +449,6 @@
       <img loading="lazy" width="300" height="225" src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenuntergang.jpg" alt="Sonnenuntergang – idyllische Stimmung am Froschteich">
     </a>
   </div>
-
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox()">×</span>
     <img id="lightbox-img" class="lightbox-content" src="" alt="Vergrößertes Bild der Ferienwohnung am Froschteich">
@@ -546,21 +558,29 @@
     E-Mail: abshagen@gmx.de<br>
     Service: Mo–So 08:00–22:00 Uhr | Deutsch, Englisch
   </p>
-
+  <p style="text-align:center; margin:1rem 0 2rem;">
+    <strong>Adresse:</strong><br>
+    Dorfstr. 8, 18556 Putgarten<br>
+    <a href="https://maps.app.goo.gl/EgHTGBViEgAWKRc4A" target="_blank" rel="noopener noreferrer" style="color:#f4a261; font-weight:bold;">
+      → Auf Google Maps anzeigen & Route planen
+    </a>
+  </p>
   <div style="text-align:center; margin:2.5rem 0;">
-    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..."
-       target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20J%C3%B6rg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
       <span>💬</span> WhatsApp schreiben
     </a>
   </div>
-
+  <div style="text-align:center; margin:1.5rem 0;">
+    <a href="https://www.ferienhausmiete.de/4676579.htm" target="_blank" rel="noopener noreferrer" class="btn" style="background:#e67e22;">
+      Mehr Infos auf ferienhausmiete.de
+    </a>
+  </div>
   <div class="share-buttons">
     <a href="https://wa.me/?text=Ferienwohnung%20am%20Froschteich%20in%20Putgarten%20-%20https://www.familieabshagen.de/" target="_blank" class="share-btn">📱 WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.familieabshagen.de/" target="_blank" class="share-btn">Facebook</a>
     <a href="https://twitter.com/intent/tweet?text=Ferienwohnung%20am%20Froschteich%20in%20Putgarten&url=https://www.familieabshagen.de/" target="_blank" class="share-btn">X / Twitter</a>
     <button onclick="navigator.clipboard.writeText('https://www.familieabshagen.de/'); alert('Link kopiert!');" class="share-btn">🔗 Link kopieren</button>
   </div>
-
   <form action="https://formspree.io/f/mojnobqd" method="POST" style="max-width:600px; margin:auto; display:grid; gap:1.3rem;">
     <input type="hidden" name="_subject" value="Neue Buchungsanfrage – Ferienwohnung am Froschteich">
     <input type="text" name="name" placeholder="Ihr Name" required style="padding:1rem; border-radius:8px; border:none; font-size:1.1rem;">
@@ -572,7 +592,7 @@
   </form>
 </section>
 
-<a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." class="sticky-whatsapp" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20J%C3%B6rg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." class="sticky-whatsapp" target="_blank" rel="noopener noreferrer">
   💬
 </a>
 
@@ -582,11 +602,15 @@
       <p style="font-size:1.1rem; margin-bottom:0.8rem;">
         <strong>Ferienwohnung am Froschteich</strong><br>
         Dorfstr. 8, 18556 Putgarten<br>
+        <a href="https://maps.app.goo.gl/EgHTGBViEgAWKRc4A" target="_blank" rel="noopener noreferrer" style="color:#f4a261;">
+          → Google Maps
+        </a><br>
         Telefon: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a><br>
         E-Mail: <a href="mailto:abshagen@gmx.de" style="color:#f4a261;">abshagen@gmx.de</a>
       </p>
     </div>
     <div class="footer-links">
+      <a href="https://www.ferienhausmiete.de/4676579.htm" target="_blank" class="footer-link-btn">ferienhausmiete.de</a>
       <a href="impressum.html" class="footer-link-btn">Impressum</a>
       <a href="datenschutz.html" class="footer-link-btn">Datenschutz</a>
     </div>
@@ -605,15 +629,12 @@
       document.getElementById('lightbox').style.display = 'flex';
     });
   });
-
   function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
   }
-
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
   });
 </script>
-
 </body>
 </html>
