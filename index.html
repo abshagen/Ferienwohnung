@@ -9,17 +9,67 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Stefanie & Jörg Abshagen" />
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
-  <!-- Open Graph -->
+
+  <!-- Open Graph – verbessert Vorschaubild in Google, Facebook, WhatsApp etc. -->
   <meta property="og:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen – hundefreundlich" />
   <meta property="og:description" content="Gemütliche Ferienwohnung am Froschteich für bis zu 5 Personen + Hund in Putgarten, Dorfstr. 8. Idyllisch gelegen, 1 km zum Strand, Haustiere willkommen." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="Ferienwohnung am Froschteich – Außenansicht in Putgarten auf Rügen" />
   <meta property="og:url" content="https://www.familieabshagen.de/" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter/X Cards – zusätzliche Chance auf gutes Thumbnail -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ferienwohnung am Froschteich – Putgarten / Rügen – hundefreundlich" />
+  <meta name="twitter:description" content="Hundefreundliche Ferienwohnung direkt am Teich, 1 km zum Strand, bis 5 Personen." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" />
+
+  <!-- Schema.org Structured Data – hilft Google bei der Darstellung -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Ferienwohnung am Froschteich",
+    "image": [
+      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg",
+      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/garten.jpg",
+      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/wohnzimmer.jpg",
+      "https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/sonnenuntergang.jpg"
+    ],
+    "description": "Hundefreundliche Ferienwohnung in Putgarten auf Rügen, bis 5 Personen + Hund, 1 km zum Strand, ruhige Lage am Kap Arkona.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dorfstr. 8",
+      "addressLocality": "Putgarten",
+      "postalCode": "18556",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 54.674287,
+      "longitude": 13.419799
+    },
+    "telephone": "+491627320763",
+    "email": "abshagen@gmx.de",
+    "url": "https://www.familieabshagen.de/",
+    "priceRange": "€€",
+    "petsAllowed": true,
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "validFrom": "2026-07-01",
+      "validThrough": "2026-12-31"
+    }
+  }
+  </script>
+
   <!-- Favicon & Apple Touch -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
+
   <style>
     :root {
       --primary: #1a5c8c;
@@ -39,6 +89,7 @@
       min-height: 100vh;
       margin-top: 50px;
     }
+    img { max-width: 100%; height: auto; display: block; }
     .ticker-banner {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -566,7 +617,7 @@
     </a>
   </p>
   <div style="text-align:center; margin:2.5rem 0;">
-    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20J%C3%B6rg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+    <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
       <span>💬</span> WhatsApp schreiben
     </a>
   </div>
@@ -592,7 +643,7 @@
   </form>
 </section>
 
-<a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20J%C3%B6rg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." class="sticky-whatsapp" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20Jörg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." class="sticky-whatsapp" target="_blank" rel="noopener noreferrer">
   💬
 </a>
 
