@@ -9,7 +9,6 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Stefanie & Jörg Abshagen" />
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
-
   <!-- Open Graph -->
   <meta property="og:title" content="Ferienwohnung Putgarten – Am Froschteich | hundefreundlich Rügen" />
   <meta property="og:description" content="Ferienwohnung Putgarten mit Hund: Am Froschteich, Dorfstr. 8 – bis 5 Personen + Hund, 1 km zum Strand, idyllische Lage am Kap Arkona. Ab 80 €/Nacht." />
@@ -19,13 +18,11 @@
   <meta property="og:image:alt" content="Ferienwohnung Putgarten – Außenansicht am Froschteich" />
   <meta property="og:url" content="https://www.familieabshagen.de/" />
   <meta property="og:type" content="website" />
-
   <!-- Twitter/X Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ferienwohnung Putgarten – Am Froschteich | hundefreundlich Rügen" />
   <meta name="twitter:description" content="Hundefreundliche Ferienwohnung Putgarten direkt am Teich, 1 km zum Strand, bis 5 Personen + Hund." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" />
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NY2870GSYK"></script>
   <script>
@@ -34,13 +31,11 @@
     gtag('js', new Date());
     gtag('config', 'G-NY2870GSYK', { 'anonymize_ip': true });
   </script>
-
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
-
   <style>
     :root {
       --primary: #1a5c8c;
@@ -88,13 +83,14 @@
       justify-content: center;
       pointer-events: none;
       z-index: -999;
-      opacity: 0.12;
+      opacity: 0.30;
     }
     .watermark-logo img {
-      width: 70vw;
-      max-width: 600px;
-      opacity: 0.18;
-      filter: blur(6px);
+      width: 80vw;
+      max-width: 700px;
+      opacity: 0.30;
+      filter: blur(3px);
+      mix-blend-mode: multiply;
     }
     .hopping-frog {
       position: fixed;
@@ -327,7 +323,7 @@
       .footer-links { flex-direction: row; gap: 2rem; }
     }
     @media (min-width: 1024px) {
-      .watermark-logo img { width: 60vw; max-width: 800px; }
+      .watermark-logo img { width: 70vw; max-width: 800px; }
       .hopping-frog { width: 70px; height: 70px; bottom: 20%; }
       header { min-height: 90vh; }
       .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
@@ -667,7 +663,6 @@
     © 2026 Stefanie & Jörg Abshagen – Ferienwohnung am Froschteich
   </div>
 </footer>
-
 <script>
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', e => {
