@@ -9,6 +9,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Stefanie & Jörg Abshagen" />
   <meta name="google-site-verification" content="rOS2TMR1o51UqAzR069i9PsPxScdcJ_T32wujde9Ynw" />
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NY2870GSYK"></script>
   <script>
@@ -17,6 +18,7 @@
     gtag('js', new Date());
     gtag('config', 'G-NY2870GSYK', { 'anonymize_ip': true });
   </script>
+
   <!-- Open Graph -->
   <meta property="og:title" content="Ferienwohnung Putgarten – Am Froschteich | hundefreundlich Rügen" />
   <meta property="og:description" content="Ferienwohnung Putgarten mit Hund: Am Froschteich, Dorfstr. 8 – bis 5 Personen + Hund, 1 km zum Strand, idyllische Lage am Kap Arkona. Ab 80 €/Nacht." />
@@ -26,13 +28,17 @@
   <meta property="og:image:alt" content="Ferienwohnung Putgarten – Außenansicht am Froschteich" />
   <meta property="og:url" content="https://www.familieabshagen.de/" />
   <meta property="og:type" content="website" />
+
   <!-- Twitter/X Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ferienwohnung Putgarten – Am Froschteich | hundefreundlich Rügen" />
   <meta name="twitter:description" content="Hundefreundliche Ferienwohnung Putgarten direkt am Teich, 1 km zum Strand, bis 5 Personen + Hund." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/fotos/haus.jpg" />
-  <!-- Favicon -->
+
+  <!-- Favicon: Transparenter Frosch -->
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png">
+
   <style>
     :root {
       --primary: #1a5c8c;
@@ -51,144 +57,125 @@
       background: var(--light);
       margin-top: 110px;
       font-size: 1.05rem;
+      position: relative;
     }
-    img { max-width: 100%; height: auto; display: block; }
-    .ticker-banner {
+
+    /* Wasserzeichen – dezenter transparenter Frosch im Hintergrund */
+    body::before {
+      content: "";
       position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #c0392b;
-      color: white;
-      font-weight: bold;
-      text-align: center;
-      padding: 8px 0;
-      overflow: hidden;
-      z-index: 99999;
-      font-size: clamp(0.9rem, 3.2vw, 1rem);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 480px;
+      background: url('https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png') center/contain no-repeat;
+      opacity: 0.06;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    .ticker-banner {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: #c0392b; color: white; font-weight: bold;
+      text-align: center; padding: 8px 0; overflow: hidden;
+      z-index: 99999; font-size: clamp(0.9rem, 3.2vw, 1rem);
       box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     }
     .ticker-content {
-      display: inline-block;
-      white-space: nowrap;
+      display: inline-block; white-space: nowrap;
       animation: ticker 35s linear infinite;
     }
     @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
     nav {
-      position: fixed;
-      top: 50px; left: 0; right: 0;
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      z-index: 9998;
-      padding: 0.6rem 1rem;
+      position: fixed; top: 50px; left: 0; right: 0;
+      background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 9998; padding: 0.6rem 1rem;
     }
     .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    .nav-logo {
-      font-weight: bold;
-      color: var(--primary);
-      font-size: 1.3rem;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-    }
+    .nav-logo { font-weight: bold; color: var(--primary); font-size: 1.3rem; }
+    .nav-links { display: flex; gap: 1.2rem; }
     .nav-links a {
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 0.5rem 0.8rem;
-      border-radius: 6px;
-      transition: all 0.2s;
+      color: var(--dark); text-decoration: none; font-weight: 500;
+      padding: 0.5rem 0.8rem; border-radius: 6px; transition: all 0.2s;
     }
-    .nav-links a:hover {
-      background: var(--light);
-      color: var(--primary);
+    .nav-links a:hover { background: var(--light); color: var(--primary); }
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary); }
+
+    /* Hüpfender transparenter Frosch (etwas kleiner) */
+    .floating-frog {
+      position: fixed;
+      top: 68px;
+      right: 22px;
+      z-index: 9999;
+      animation: frog-hop 2.9s infinite ease-in-out;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+      pointer-events: none;
     }
-    .hamburger {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: var(--primary);
+    .floating-frog img {
+      width: 54px;
+      height: auto;
     }
+    @keyframes frog-hop {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-13px); }
+    }
+
     @media (max-width: 768px) {
       .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: none; flex-direction: column; position: absolute;
+        top: 100%; left: 0; right: 0; background: white;
+        padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       }
       .nav-links.active { display: flex; }
       .hamburger { display: block; }
       body { margin-top: 100px; }
       nav { top: 45px; }
+      .floating-frog { top: 60px; right: 16px; }
+      .floating-frog img { width: 48px; }
     }
+
     header {
       min-height: 55vh;
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
                   url('https://static.ferienhausmiete.de/pictures/175333/bilder_original/175333_79761968515171.jpg') center/cover no-repeat;
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      display: flex; align-items: center; justify-content: center; text-align: center;
       padding: 3rem 1.2rem 4rem;
     }
     @media (max-width: 768px) { header { min-height: 45vh; padding: 2.5rem 1rem; } }
     h1 { font-size: clamp(2.2rem, 9vw, 4rem); margin-bottom: 1rem; text-shadow: 0 3px 10px rgba(0,0,0,0.7); }
     .lead { font-size: clamp(1.05rem, 4.2vw, 1.3rem); margin-bottom: 1.8rem; max-width: 85%; }
     .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-size: clamp(1.05rem, 4vw, 1.2rem);
-      font-weight: bold;
-      padding: 0.95rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s;
-      box-shadow: 0 5px 15px rgba(244,162,97,0.4);
-      min-width: 220px;
-      margin: 0.7rem;
-      text-align: center;
+      display: inline-block; background: var(--accent); color: white;
+      font-size: clamp(1.05rem, 4vw, 1.2rem); font-weight: bold;
+      padding: 0.95rem 2.2rem; border-radius: 50px; text-decoration: none;
+      transition: all 0.3s; box-shadow: 0 5px 15px rgba(244,162,97,0.4);
+      min-width: 220px; margin: 0.7rem; text-align: center;
     }
     .btn:hover { background: #e76f51; transform: translateY(-2px); }
     section { padding: clamp(2.5rem, 7vw, 4.5rem) 1.2rem 3.5rem; max-width: 1200px; margin: 0 auto; }
     h2 { font-size: clamp(1.7rem, 5.5vw, 2.3rem); margin-bottom: 1.8rem; text-align: center; color: var(--primary-dark); }
     .info-box, .rules-box, .price-table {
-      background: #f0f8ff;
-      border-radius: 12px;
-      padding: clamp(1.3rem, 4vw, 1.8rem);
-      margin: 1.4rem auto;
-      max-width: 900px;
-      font-size: clamp(1rem, 3.4vw, 1.08rem);
+      background: #f0f8ff; border-radius: 12px; padding: clamp(1.3rem, 4vw, 1.8rem);
+      margin: 1.4rem auto; max-width: 900px; font-size: clamp(1rem, 3.4vw, 1.08rem);
     }
     table { width: 100%; border-collapse: collapse; margin: 1.4rem 0; }
     th, td { padding: 1rem; border: 1px solid #ddd; text-align: left; }
     th { background: var(--primary); color: white; }
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1.1rem;
-      padding: 0 0.4rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.1rem; padding: 0 0.4rem;
     }
     @media (max-width: 480px) { .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.9rem; } }
     .gallery-item {
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-      cursor: pointer;
-      transition: all 0.3s;
+      aspect-ratio: 4/3; overflow: hidden; border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12); cursor: pointer; transition: all 0.3s;
     }
     .gallery-item:hover { transform: scale(1.06); }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
@@ -201,17 +188,9 @@
     form input, form textarea { width: 100%; padding: 1.1rem; border-radius: 8px; border: 1px solid #ccc; font-size: 1.1rem; margin-bottom: 1rem; }
     form button { width: 100%; padding: 1.1rem; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: bold; cursor: pointer; min-height: 55px; }
     .sticky-whatsapp {
-      position: fixed;
-      bottom: 80px; right: 20px;
-      background: #25D366;
-      color: white;
-      width: 65px; height: 65px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.2rem;
-      box-shadow: 0 6px 20px rgba(37,213,102,0.5);
-      z-index: 9997;
-      text-decoration: none;
+      position: fixed; bottom: 80px; right: 20px; background: #25D366; color: white;
+      width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; box-shadow: 0 6px 20px rgba(37,213,102,0.5); z-index: 9997; text-decoration: none;
     }
     @media (max-width: 480px) { .sticky-whatsapp { bottom: 90px; right: 15px; width: 60px; height: 60px; font-size: 2rem; } }
     footer { background: var(--dark); color: white; padding: 2.5rem 1rem; text-align: center; }
@@ -221,11 +200,13 @@
   </style>
 </head>
 <body>
+
 <div class="ticker-banner">
   <div class="ticker-content">
     Leider bleibt unsere Ferienwohnung in der ersten Jahreshälfte 2026 aufgrund von Sanierungsarbeiten geschlossen. Ab Juli 2026 freuen wir uns schon auf euch in der frisch modernisierten Version! Anfragen nehmen wir gerne entgegen. Eure Familie Abshagen.
   </div>
 </div>
+
 <nav>
   <div class="nav-container">
     <div class="nav-logo">Am Froschteich</div>
@@ -240,6 +221,12 @@
     </div>
   </div>
 </nav>
+
+<!-- Hüpfender transparenter Frosch -->
+<div class="floating-frog">
+  <img src="https://raw.githubusercontent.com/abshagen/Ferienwohnung/main/Froschlogotransparent.png" alt="Am Froschteich">
+</div>
+
 <header>
   <div class="hero-content">
     <h1>Ferienwohnung am Froschteich</h1>
@@ -248,6 +235,7 @@
     <a href="#kontakt" class="btn" style="background:#e67e22;">Jetzt direkt anfragen</a>
   </div>
 </header>
+
 <section id="beschreibung">
   <h2>Zu Gast und doch Zuhause!</h2>
   <div class="info-box">
@@ -258,6 +246,7 @@
     <p>Schlafmöglichkeiten: Zweibett-Schlafzimmer mit Beistellbett und Kleiderschrank, kleines Kinderschlafzimmer mit ausziehbarer Schlafcouch (ideal für 1 Person), Schlafcouch oder Beistellbett für die 5. Person im Wohnzimmer. Weitere Highlights: CD-Radio, Satelliten-TV, WLAN, Grillmöglichkeit und Gartennutzung auf ca. 2500 m². Haustiere sind willkommen – unser Gastgeber hat selbst Hunde.</p>
   </div>
 </section>
+
 <section id="hundewillkommen">
   <h2>Ferien mit Hund – willkommen in Putgarten am Kap Arkona</h2>
   <div class="info-box">
@@ -265,6 +254,7 @@
     <p>Willkommen sind Hunde aller Größen – wir freuen uns auf Sie und Ihren Begleiter!</p>
   </div>
 </section>
+
 <section id="ueber-uns">
   <h2>Über uns – Ihre Gastgeber</h2>
   <div class="gastgeber-container">
@@ -276,22 +266,20 @@
     </div>
   </div>
 </section>
+
 <section id="anfahrt" style="background:#f8f9fa;">
   <h2>So finden Sie uns</h2>
   <p style="text-align:center; font-size:1.15rem; margin-bottom:1.5rem;">Dorfstr. 8, 18556 Putgarten – direkt am nördlichsten Zipfel von Rügen</p>
-<iframe 
-  class="map-embed" 
-  loading="lazy" 
-  allowfullscreen 
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d216.03786979741562!2d13.419718645669898!3d54.674292768716946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ab538a5130dddd%3A0x4e95b6bec6a8c0b3!2sFerienwohnung%20am%20Froschteich!5e0!3m2!1sde!2sde!4v1773236159490!5m2!1sde!2sde">
-</iframe>
+  <iframe class="map-embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d216.03786979741562!2d13.419718645669898!3d54.674292768716946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ab538a5130dddd%3A0x4e95b6bec6a8c0b3!2sFerienwohnung%20am%20Froschteich!5e0!3m2!1sde!2sde!4v1773236159490!5m2!1sde!2sde">
+  </iframe>
   <div style="text-align:center; margin:2rem 0;">
     <p><strong>Geokoordinaten:</strong> <a href="https://www.google.com/maps/search/?api=1&query=54.674287,13.419799" target="_blank" style="color:var(--primary);">54.674287, 13.419799</a></p>
     <a href="https://maps.app.goo.gl/EgHTGBViEgAWKRc4A" target="_blank" class="btn" style="background:#4285F4;">→ Auf Google Maps öffnen</a>
     <p style="margin-top:1.5rem;"><a href="https://www.ferienhausmiete.de/4676579.htm" target="_blank" style="color:var(--accent);">Mehr Infos auf ferienhausmiete.de</a></p>
   </div>
 </section>
+
 <section id="galerie">
   <h2>Fotogalerie</h2>
   <p style="text-align:center; margin-bottom:2.5rem; color:var(--gray);">Klicken Sie auf ein Bild, um es größer anzusehen</p>
@@ -330,6 +318,7 @@
     <img id="lightbox-img" class="lightbox-content" src="" alt="Vergrößertes Bild">
   </div>
 </section>
+
 <section id="verfuegbarkeit" style="background:#f8f9fa; text-align:center;">
   <h2>Verfügbarkeit prüfen</h2>
   <p style="font-size:1.2rem; margin-bottom:2rem;">Live-Kalender – oder fragen Sie direkt an!</p>
@@ -339,65 +328,40 @@
   <a href="#kontakt" class="btn" style="margin-top:2rem;">Jetzt unverbindlich anfragen</a>
 </section>
 
-
-
 <section id="bewertungen" style="background:#f8f9fa; text-align:center; padding: clamp(3rem, 6vw, 5rem) 1.2rem;">
   <h2>Was unsere Gäste sagen</h2>
-  
   <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.8rem; text-align:left;">
-    
     <div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
       <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
-      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">
-        „Absolut empfehlenswert! Die Wohnung ist gemütlich, sauber und perfekt ausgestattet. Unser Labrador hat den großen Garten geliebt – er konnte den ganzen Tag frei herumlaufen. Die Lage am Froschteich ist traumhaft ruhig, und der Strand ist wirklich nur 10 Minuten mit dem Auto entfernt. Stefanie und Jörg sind super nette Gastgeber – herzlichen Dank!“
-      </blockquote>
+      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">„Absolut empfehlenswert! Die Wohnung ist gemütlich, sauber und perfekt ausgestattet. Unser Labrador hat den großen Garten geliebt – er konnte den ganzen Tag frei herumlaufen. Die Lage am Froschteich ist traumhaft ruhig, und der Strand ist wirklich nur 10 Minuten mit dem Auto entfernt. Stefanie und Jörg sind super nette Gastgeber – herzlichen Dank!“</blockquote>
       <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Familie Berger mit Bruno – August 2025</p>
     </div>
-
     <div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
       <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
-      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">
-        „Wir waren zu fünft (3 Erwachsene + 2 Kinder) plus Hund und hatten mehr als genug Platz. Das Kinderzimmer mit der ausziehbaren Couch war genial für unseren 8-Jährigen. WLAN stabil, Küche top, Terrasse mit Blick auf den Teich – einfach Urlaub wie er sein soll. Die Nähe zum Leuchtturm und den Hundestränden ist unschlagbar. Kommen definitiv wieder!“
-      </blockquote>
+      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">„Wir waren zu fünft (3 Erwachsene + 2 Kinder) plus Hund und hatten mehr als genug Platz. Das Kinderzimmer mit der ausziehbaren Couch war genial für unseren 8-Jährigen. WLAN stabil, Küche top, Terrasse mit Blick auf den Teich – einfach Urlaub wie er sein soll. Die Nähe zum Leuchtturm und den Hundestränden ist unschlagbar. Kommen definitiv wieder!“</blockquote>
       <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Die Familie Neumann – Pfingsten 2025</p>
     </div>
-
     <div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
       <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
-      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">
-        „Endlich mal ein Ort, wo man mit Hund wirklich willkommen ist – ohne komische Blicke oder Verbote. Der Garten ist riesig, die Wohnung hell und modern eingerichtet. Morgens Enten am Teich beobachten, abends Grillen und Sterne gucken – herrlich! Vielen Dank an Stefanie & Jörg für die herzliche Betreuung.“
-      </blockquote>
+      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">„Endlich mal ein Ort, wo man mit Hund wirklich willkommen ist – ohne komische Blicke oder Verbote. Der Garten ist riesig, die Wohnung hell und modern eingerichtet. Morgens Enten am Teich beobachten, abends Grillen und Sterne gucken – herrlich! Vielen Dank an Stefanie & Jörg für die herzliche Betreuung.“</blockquote>
       <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Monika S. mit Elli – September 2025</p>
     </div>
-
     <div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
       <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
-      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">
-        „Die Ferienwohnung am Froschteich hat unsere Erwartungen bei Weitem übertroffen. Großer Garten, separate Terrasse, alles sehr gepflegt. Besonders toll: die Nähe zu den Hundestränden – wir konnten täglich lange Touren machen. Die Gastgeber sind herzlich und hilfsbereit. Fünf Sterne reichen kaum!“
-      </blockquote>
+      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">„Die Ferienwohnung am Froschteich hat unsere Erwartungen bei Weitem übertroffen. Großer Garten, separate Terrasse, alles sehr gepflegt. Besonders toll: die Nähe zu den Hundestränden – wir konnten täglich lange Touren machen. Die Gastgeber sind herzlich und hilfsbereit. Fünf Sterne reichen kaum!“</blockquote>
       <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Sabine & Thomas mit Rocky – Juli 2025</p>
     </div>
-
-
-<div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-  <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
-  <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">
-    „Wir haben die Ferienwohnung für einen verlängerten Herbsturlaub gebucht und waren begeistert. Die Sonne scheint hier oben länger, der Teich mit den Fröschen und Enten war ein Highlight für unsere Kinder. Die Wohnung ist sehr gut gepflegt. Und der Hund? Der hat sich wie im Paradies gefühlt – so viel Platz zum Rennen! Vielen Dank an Stefanie und Jörg für die warme Aufnahme.“
-  </blockquote>
-  <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Familie Wagner mit Mia & Leo – Oktober 2025</p>
-</div>
-
-<div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-  <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
-  <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">
-    „Kurz gesagt: Die beste hundefreundliche Unterkunft, die wir je hatten. Ruhige Lage, riesiger Gartenanteil, super saubere und helle Wohnung. Der Weg zu den Hundestränden ist wirklich nur ein Katzensprung. Wir haben viel Zeit am Froschteich verbracht – morgens Kaffee auf der Terrasse, abends Grillen. Die Gastgeber sind unglaublich nett und hilfsbereit. 100% Weiterempfehlung!“
-  </blockquote>
-  <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Karin L. mit Buddy – November 2025</p>
-</div>
-
-
+    <div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+      <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
+      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">„Wir haben die Ferienwohnung für einen verlängerten Herbsturlaub gebucht und waren begeistert. Die Sonne scheint hier oben länger, der Teich mit den Fröschen und Enten war ein Highlight für unsere Kinder. Die Wohnung ist sehr gut gepflegt. Und der Hund? Der hat sich wie im Paradies gefühlt – so viel Platz zum Rennen! Vielen Dank an Stefanie und Jörg für die warme Aufnahme.“</blockquote>
+      <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Familie Wagner mit Mia & Leo – Oktober 2025</p>
+    </div>
+    <div class="info-box" style="padding:1.6rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+      <p style="font-size:1.8rem; color:#f4a261; margin-bottom:0.6rem;">★★★★★</p>
+      <blockquote style="font-style:italic; margin:0 0 1rem 0; line-height:1.6;">„Kurz gesagt: Die beste hundefreundliche Unterkunft, die wir je hatten. Ruhige Lage, riesiger Gartenanteil, super saubere und helle Wohnung. Der Weg zu den Hundestränden ist wirklich nur ein Katzensprung. Wir haben viel Zeit am Froschteich verbracht – morgens Kaffee auf der Terrasse, abends Grillen. Die Gastgeber sind unglaublich nett und hilfsbereit. 100% Weiterempfehlung!“</blockquote>
+      <p style="font-weight:bold; color:var(--primary-dark); margin:0;">Karin L. mit Buddy – November 2025</p>
+    </div>
   </div>
-
   <p style="margin:3rem 0 1rem; font-size:1.25rem; font-weight:bold;">
     <a href="https://maps.app.goo.gl/udNsCGiRC5gpczzp8" target="_blank" style="color:var(--primary); text-decoration:underline;">
       → Jetzt deine eigene Bewertung auf Google hinterlassen und uns unterstützen!
@@ -405,8 +369,6 @@
   </p>
 </section>
 
-
-</section>
 <section id="preise">
   <h2>Preise & Kosten</h2>
   <div class="price-table">
@@ -423,6 +385,7 @@
     <p style="margin-top:1rem; color:var(--gray);">Stand: März 2026 – Preise können saisonal variieren.</p>
   </div>
 </section>
+
 <section id="regeln">
   <h2>Hausregeln & Wichtige Hinweise</h2>
   <div class="rules-box">
@@ -448,6 +411,7 @@
     </ul>
   </div>
 </section>
+
 <section id="kontakt" style="background:var(--dark); color:white;">
   <h2>Kontakt & Buchungsanfrage</h2>
   <p style="text-align:center; margin:1.5rem 0;">Familie S. Abshagen (Stefanie & Jörg)<br>Tel: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a><br>E-Mail: <a href="mailto:abshagen@gmx.de" style="color:#f4a261;">abshagen@gmx.de</a></p>
@@ -464,26 +428,26 @@
     <button type="submit">Anfrage senden</button>
   </form>
 </section>
+
 <footer class="footer-top">
   <p><strong>Ferienwohnung am Froschteich</strong><br>Dorfstr. 8, 18556 Putgarten<br>Tel: <a href="tel:+491627320763" style="color:#f4a261;">0049 (0)162 7320763</a></p>
   <p><a href="impressum.html" class="footer-link-btn">Impressum</a> | <a href="datenschutz.html" class="footer-link-btn">Datenschutz</a></p>
   <p style="margin-top:1.5rem; font-size:0.9rem;">© 2026 Stefanie & Jörg Abshagen</p>
 </footer>
+
 <a href="https://wa.me/491627320763?text=Hallo%20Stefanie%20%26%20J%C3%B6rg,%20ich%20habe%20Interesse%20an%20der%20Ferienwohnung%20am%20Froschteich..." class="sticky-whatsapp" target="_blank">💬</a>
 
 <script>
   function toggleMenu() {
     document.getElementById('navMenu').classList.toggle('active');
   }
-
-  // Automatisches Schließen des Menüs nach Klick auf einen Link
   document.querySelectorAll('#navMenu a').forEach(link => {
     link.addEventListener('click', () => {
       document.getElementById('navMenu').classList.remove('active');
     });
   });
 
-  // Lightbox-Funktionalität
+  // Lightbox
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', e => {
       e.preventDefault();
@@ -491,11 +455,9 @@
       document.getElementById('lightbox').style.display = 'flex';
     });
   });
-
   function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
   }
-
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
   });
